@@ -1,13 +1,14 @@
-package mainMenu;
+package menus.mainMenu;
 
-import menuCommons.MenuController;
+import menus.menuCommons.MenuController;
+import menus.menuCommons.MenuView;
 
 public class MainMenu {
 
     public MainMenu(){
 
         MainMenuModel model = new MainMenuModel();
-        MainMenuView view = new MainMenuView(model.getMenuOptions());
+        MenuView view = new MenuView("Inventory System", model.getMenuOptions());
         MenuController controller = new MenuController(model, view);
 
         controller.readUserInput();

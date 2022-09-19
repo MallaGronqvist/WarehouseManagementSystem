@@ -1,15 +1,17 @@
 package poolMVC;
 
-import product.DisplayablePool;
+import product.InventoryDataItem;
 
-public class DisplayPool {
-    public DisplayPool(DisplayablePool pool) {
-        PoolModel model = new PoolModel(pool);
-        PoolView view = new PoolView(model.getPool());
+import java.util.List;
+
+public class PoolDisplayer {
+
+    // Ask why List< ? implements InventoryData> data doesn't work.
+    public PoolDisplayer(List<? extends InventoryDataItem> data, ProcessingBehavior processor) {
+        PoolModel model = new PoolModel(data, processor);
+        PoolView view = new PoolView(model.getData());
         PoolController controller = new PoolController(model, view);
 
         controller.readInput();
     }
-
-
 }

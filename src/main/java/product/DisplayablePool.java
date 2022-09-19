@@ -1,2 +1,3 @@
-package product;public interface Pool {
+package product;
+public interface DisplayablePool {
 }

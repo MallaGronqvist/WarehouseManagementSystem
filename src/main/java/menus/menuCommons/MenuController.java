@@ -1,4 +1,4 @@
-package menuCommons;
+package menus.menuCommons;
 
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class MenuController {
 
             model.processOption(selectedOption);
 
-        } catch (NumberFormatException | IndexOutOfBoundsException | NullPointerException exception) {
+        } catch (NumberFormatException | IndexOutOfBoundsException exception) {
             view.printInvalidOption();
             view.requestUserInput();
             readUserInput();

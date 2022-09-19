@@ -1,17 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="WarehouseManagementSystem:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="" />
+    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/WarehouseManagementSystem_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/productPool.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/menus/userMenu/UserMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/menus/userMenu/UserMenuModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/product/InventoryDataItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/transaction/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/users/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/FileHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/ProductPoolFileHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/mainMenu/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/MainMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/mainMenu/MainMenuModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/MainMenuView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/PoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/PoolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/PoolDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/PoolDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/PoolModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/PoolModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/PoolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/PoolView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/ProcessSoldProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/ProcessSoldProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/ProcessingBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/ProcessingBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/product/DisplayableItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/product/DisplayablePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/product/DisplayablePool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/product/ProductPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/product/ProductPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/transaction/TransactionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/transaction/TransactionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/users/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Cashier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/users/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/users/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MenuPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MenuPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/product/ProductPoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/product/ProductPoolTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2Ent850qSwqvhzjFp0ynI32CueJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -19,9 +81,63 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="InventorySystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductPoolTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventorySystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="product" />
+      <option name="MAIN_CLASS_NAME" value="product.ProductPoolTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="InventorySystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="InventorySystem" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ProductPoolTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -32,5 +148,37 @@
       <updated>1663243017066</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/transaction/TransactionPool.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/transaction/TransactionPool.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/transaction/TransactionPool.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

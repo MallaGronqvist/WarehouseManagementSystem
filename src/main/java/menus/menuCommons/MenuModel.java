@@ -1,9 +1,13 @@
-package menuCommons;
+package menus.menuCommons;
+
 
 import java.util.List;
 
-public interface MenuModel {
+public abstract class MenuModel {
 
-    List<String> getMenuOptions();
-    void processOption(int selectedOption) throws IndexOutOfBoundsException;
+    protected List<String> menuOptions;
+    public List<String> getMenuOptions(){
+        return menuOptions;
+    };
+    protected abstract void processOption(int selectedOption) throws IndexOutOfBoundsException;
 }

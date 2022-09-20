@@ -2,6 +2,7 @@ package users;
 
 import menus.mainMenu.MainMenu;
 import menus.userMenu.UserMenu;
+import poolMVC.PlaceOrder;
 import poolMVC.PoolDisplayer;
 import poolMVC.ProcessSoldProduct;
 import product.Product;
@@ -16,7 +17,11 @@ public abstract class User {
 
     protected void viewProductPool() {
 
-        PoolDisplayer displayer = new PoolDisplayer(ProductPool.getAllProducts(), new ProcessSoldProduct());
+        new PoolDisplayer(ProductPool.getAllProducts(), new ProcessSoldProduct());
+    }
+
+    protected void viewSoonOutOfStockProducts(){
+        new PoolDisplayer(ProductPool.getSoonOutOfStockProducts(), new PlaceOrder());
     }
 
     protected void navigateToMainMenu(){

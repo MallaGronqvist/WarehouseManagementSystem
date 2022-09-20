@@ -14,8 +14,9 @@ public class UserMenuModel extends MenuModel {
     public UserMenuModel(User user) {
         this.user = user;
 
+        // get these directly from user?
         if(user instanceof Cashier){
-            menuOptions = List.of("Register sold item", "Sign out");
+            menuOptions = List.of("Register sold item", "View 'soon out of stock' products / Place order", "Sign out");
         }
         if(user instanceof Manager){
             menuOptions = List.of("Review inventory / Register sold item", "Review order list");

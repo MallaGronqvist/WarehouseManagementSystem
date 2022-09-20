@@ -7,9 +7,8 @@ public class Cashier extends User {
     public void processMenuOption(int selectedOption) throws IndexOutOfBoundsException {
         switch (selectedOption) {
                  case 1 -> super.viewProductPool();
-                 case 2 -> navigateToMainMenu();
-            //     case 2 -> // user.doSomething()
-            //     case 3 -> // user.findYourShoe()
+                 case 2 -> super.viewSoonOutOfStockProducts();
+                 case 3-> navigateToMainMenu();
             default -> throw new IndexOutOfBoundsException();
         }
     }

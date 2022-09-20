@@ -5,6 +5,7 @@ import utils.Subject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductPool implements Subject {
 
@@ -25,6 +26,14 @@ public class ProductPool implements Subject {
         product.removeItems(quantity);
 
         observer.update(allProducts);
+    }
+
+    public static List<Product> getSoonOutOfStockProducts() {
+        List<Product> soonOutOfStock = allProducts.stream()
+                .filter(item -> item.getQuantity() < 3)
+                .collect(Collectors.toList());
+
+        return soonOutOfStock;
     }
 
 

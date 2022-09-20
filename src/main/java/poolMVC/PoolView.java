@@ -1,5 +1,6 @@
 package poolMVC;
 
+import order.Order;
 import product.InventoryDataItem;
 import product.Product;
 import transaction.Transaction;
@@ -15,7 +16,8 @@ public class PoolView {
         sampleItem = data.get(0);
 
         } catch (IndexOutOfBoundsException exception) {
-            System.out.println("No data was found.");
+            System.out.println("No items were found.");
+            return;
         }
 
         displayTable(data);
@@ -29,10 +31,13 @@ public class PoolView {
     void requestInput() {
         if (sampleItem instanceof Product){
             System.out.print("Enter selected product id, " +
-                    "or 'X' to exit:");
+                    "or 'X' to exit: ");
         } else if (sampleItem instanceof Transaction){
             System.out.println("Enter selected receipt number, " +
-                    "or 'X' to exit.");
+                    "or 'X' to exit: ");
+        } else if( sampleItem instanceof Order){
+            System.out.print("Enter an order id to confirm or cancel order," +
+                    "or 'X' to exit: ");
         }
     }
 

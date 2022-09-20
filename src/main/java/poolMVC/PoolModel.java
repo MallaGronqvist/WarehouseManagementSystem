@@ -21,7 +21,6 @@ public class PoolModel {
 
     public void processOption(String input) throws NumberFormatException, NullPointerException{
 
-
         processor.processOption(input, data);
     }
 }

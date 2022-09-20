@@ -10,4 +10,6 @@ public abstract class InventoryDataItem {
     public abstract List<String> getDisplayValues();
 
     public abstract String getSavable();
+
+    public abstract int getId();
 }

@@ -1,5 +1,6 @@
 package poolMVC;
 
+import poolMVC.processingBehavior.ProcessingBehavior;
 import product.InventoryDataItem;
 
 import java.util.List;

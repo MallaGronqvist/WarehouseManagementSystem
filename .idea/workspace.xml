@@ -10,18 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Tried to recap...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/order/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/order/OrderPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/poolMVC/PlaceOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/poolMVC/ReviewOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/poolMVC/processingBehavior/PlaceOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/productPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/productPool.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menus/userMenu/UserMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/userMenu/UserMenuModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/userMenu/UserMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/userMenu/UserMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/order/OrderPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/order/OrderPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/PlaceOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/PoolDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/PoolDisplayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/PoolModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/PoolModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/PoolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/PoolView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/ProcessingBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/ProcessingBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/ProcessSoldProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/processingBehavior/ProcessSoldProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/ProcessingBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/processingBehavior/ProcessingBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolMVC/ReviewOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolMVC/processingBehavior/ReviewOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/product/InventoryDataItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/product/InventoryDataItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/product/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/product/ProductPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/product/ProductPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/users/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Cashier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/transaction/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/users/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/User.java" afterDir="false" />
     </list>
@@ -128,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663596320103</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Tried to recap...">
+      <created>1663659374339</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663659374339</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

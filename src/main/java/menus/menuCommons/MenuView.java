@@ -10,7 +10,6 @@ public class MenuView {
 
         System.out.println(title);
         System.out.println();
-        System.out.println("Choose an operation:");
 
         MenuPrinter.listOptions(menuOptions);
 

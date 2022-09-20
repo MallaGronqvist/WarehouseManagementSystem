@@ -30,12 +30,16 @@ public class ProductPool implements Subject {
 
     public static List<Product> getSoonOutOfStockProducts() {
         List<Product> soonOutOfStock = allProducts.stream()
-                .filter(item -> item.getQuantity() < 3)
+                .filter(item -> item.getQuantity() < 6)
                 .collect(Collectors.toList());
 
         return soonOutOfStock;
     }
 
+    public static void addItemsToProduct(Product product, int quantity) {
+        product.addItems(quantity);
+        observer.update(allProducts);
+    }
 
     public void addProduct(Product product) {
         allProducts.add(product);

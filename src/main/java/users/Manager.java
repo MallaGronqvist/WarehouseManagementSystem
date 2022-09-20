@@ -1,9 +1,8 @@
 package users;
 
-import menus.mainMenu.MainMenu;
 import order.OrderPool;
 import poolMVC.PoolDisplayer;
-import poolMVC.ReviewOrder;
+import poolMVC.processingBehavior.ReviewOrder;
 
 public class Manager extends User{
     @Override

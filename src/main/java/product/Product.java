@@ -69,4 +69,8 @@ public class Product extends InventoryDataItem {
     public int getId() {
         return id;
     }
+
+    public void addItems(int quantity) {
+        this.quantity += quantity;
+    }
 }

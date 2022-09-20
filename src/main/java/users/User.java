@@ -2,10 +2,9 @@ package users;
 
 import menus.mainMenu.MainMenu;
 import menus.userMenu.UserMenu;
-import poolMVC.PlaceOrder;
+import poolMVC.processingBehavior.PlaceOrder;
 import poolMVC.PoolDisplayer;
-import poolMVC.ProcessSoldProduct;
-import product.Product;
+import poolMVC.processingBehavior.ProcessSoldProduct;
 import product.ProductPool;
 
 public abstract class User {

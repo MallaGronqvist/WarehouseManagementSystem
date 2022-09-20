@@ -1,6 +1,7 @@
-package poolMVC;
+package poolMVC.processingBehavior;
 
 import menus.mainMenu.MainMenu;
+import poolMVC.processingBehavior.ProcessingBehavior;
 import product.InventoryDataItem;
 import product.Product;
 import product.ProductPool;
@@ -10,11 +11,12 @@ import transaction.TransactionPool;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProcessSoldProduct implements ProcessingBehavior{
+public class ProcessSoldProduct implements ProcessingBehavior {
 
     @Override
     public void processOption(String input, List<? extends InventoryDataItem> data)
             throws NumberFormatException, NullPointerException {
+
 
         int selectedId = Integer.parseInt(input);
         InventoryDataItem product = null;

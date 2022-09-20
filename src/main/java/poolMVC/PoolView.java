@@ -36,7 +36,7 @@ public class PoolView {
             System.out.println("Enter selected receipt number, " +
                     "or 'X' to exit: ");
         } else if( sampleItem instanceof Order){
-            System.out.print("Enter an order id to confirm or cancel order," +
+            System.out.print("Enter id of the order you want to manage," +
                     "or 'X' to exit: ");
         }
     }

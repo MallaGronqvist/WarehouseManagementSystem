@@ -6,6 +6,8 @@ import product.Product;
 import java.util.List;
 
 public class Transaction extends InventoryDataItem {
+
+    int id;
     private String receiptNumber;
     private Product product;
     int quantity;
@@ -37,6 +39,11 @@ public class Transaction extends InventoryDataItem {
     @Override
     public String getSavable() {
         return null;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     public String getReceiptNumber() {

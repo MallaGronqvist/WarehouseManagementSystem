@@ -3,6 +3,7 @@ package fileHandlers;
 import inventoryData.InventoryDataItem;
 
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -11,11 +12,23 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.nio.file.Files.notExists;
+import static java.nio.file.Files.size;
+
 public abstract class FileHandler {
     private final Path filePath;
 
-    public FileHandler(String filePath) {
+    public FileHandler(String filePath) throws FileNotFoundException {
+
         this.filePath = Path.of(filePath);
+
+        checkFile();
+    }
+
+    private void checkFile() throws FileNotFoundException {
+        if(notExists(this.filePath)){
+            throw new FileNotFoundException(getFilePath());
+        }
     }
 
     public String getFilePath() {

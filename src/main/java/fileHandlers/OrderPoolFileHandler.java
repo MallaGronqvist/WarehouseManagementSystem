@@ -5,13 +5,14 @@ import inventoryData.order.Order;
 import utils.Observer;
 import utils.Subject;
 
+import java.io.IOException;
 import java.util.List;
 
 public class OrderPoolFileHandler extends FileHandler implements Observer {
 
     private Subject subject;
 
-    public OrderPoolFileHandler(String filePath) {
+    public OrderPoolFileHandler(String filePath) throws IOException {
         super(filePath);
     }
 

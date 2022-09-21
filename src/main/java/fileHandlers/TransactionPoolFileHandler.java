@@ -1,17 +1,17 @@
 package fileHandlers;
 
 import inventoryData.InventoryDataItem;
-import inventoryData.product.Product;
 import inventoryData.transaction.Transaction;
 import utils.Observer;
 import utils.Subject;
 
+import java.io.IOException;
 import java.util.List;
 
 public class TransactionPoolFileHandler extends FileHandler implements Observer {
     private Subject subject;
 
-    public TransactionPoolFileHandler(String filePath) {
+    public TransactionPoolFileHandler(String filePath) throws IOException {
         super(filePath);
     }
 
@@ -38,5 +38,7 @@ public class TransactionPoolFileHandler extends FileHandler implements Observer 
     }
 
     @Override
-    public void update(List<? extends InventoryDataItem> allTransactions) { saveToFile(allTransactions); }
+    public void update(List<? extends InventoryDataItem> allTransactions) {
+        saveToFile(allTransactions);
+    }
 }

@@ -5,12 +5,13 @@ import inventoryData.product.Product;
 import utils.Observer;
 import utils.Subject;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ProductPoolFileHandler extends FileHandler implements Observer {
 
     private Subject subject;
-    public ProductPoolFileHandler(String filePath) {
+    public ProductPoolFileHandler(String filePath) throws IOException {
         super(filePath);
     }
 

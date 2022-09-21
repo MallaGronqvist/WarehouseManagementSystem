@@ -2,6 +2,7 @@ package fileHandlers;
 
 import inventoryData.InventoryDataItem;
 import inventoryData.transaction.Transaction;
+import inventoryData.transaction.TransactionType;
 import utils.Observer;
 import utils.Subject;
 
@@ -24,11 +25,12 @@ public class TransactionPoolFileHandler extends FileHandler implements Observer 
         try {
             final String DELIMIT = ";";
             String[] transactionData = line.split(DELIMIT);
-            int transactionId = Integer.parseInt(transactionData[0]);
-            int productId = Integer.parseInt(transactionData[1]);
-            int quantity = Integer.parseInt(transactionData[2]);
-            String receiptNumber = transactionData[3];
-            return (new Transaction(transactionId, productId, quantity, receiptNumber));
+            TransactionType type = TransactionType.valueOf(transactionData[0]);
+            int transactionId = Integer.parseInt(transactionData[1]);
+            int productId = Integer.parseInt(transactionData[2]);
+            int quantity = Integer.parseInt(transactionData[3]);
+            String receiptNumber = transactionData[4];
+            return (new Transaction(type, transactionId, productId, quantity, receiptNumber));
         } catch (NumberFormatException | IndexOutOfBoundsException exception) {
             System.out.println("Warning: An error occurred while reading transaction file.");
             System.out.println("Some transaction data may be corrupt.");

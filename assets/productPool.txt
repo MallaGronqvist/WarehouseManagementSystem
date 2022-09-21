@@ -1,7 +1,7 @@
 1;Xiaomi 12;43;A1
-2;IPhone 16;9;A8
+2;IPhone 16;7;A8
 3;Samsung XY;20;A4
 4;Redmi WQ;12;B4
-5;IPhone Original;7;B2
+5;IPhone Original;5;B2
 6;Motorola 10S;5;C1
 7;Huawei A22;9;A3

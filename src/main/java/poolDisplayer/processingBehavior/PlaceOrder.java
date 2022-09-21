@@ -1,5 +1,8 @@
 package poolDisplayer.processingBehavior;
 
+import inventoryData.transaction.Transaction;
+import inventoryData.transaction.TransactionPool;
+import inventoryData.transaction.TransactionType;
 import menus.mainMenu.MainMenu;
 import inventoryData.order.Order;
 import inventoryData.order.OrderPool;
@@ -90,7 +93,9 @@ public class PlaceOrder implements ProcessingBehavior {
     }
 
     private void createOrder(Product product, int quantity) {
+
         OrderPool.addNeWOrder(new Order(product, quantity));
+        TransactionPool.addNewTransaction(new Transaction(TransactionType.ORDERED, "-", product, quantity));
     }
 
     private int requestQuantity() {

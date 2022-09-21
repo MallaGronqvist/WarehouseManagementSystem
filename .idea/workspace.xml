@@ -10,14 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Worked on FileHandler -system.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fileHandlers/FileSetUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/TransactionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/ViewInventoryDataItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/orderPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/orderPool.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fileHandlers/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileHandlers/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fileHandlers/OrderPoolFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileHandlers/OrderPoolFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fileHandlers/ProductPoolFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileHandlers/ProductPoolFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/productPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/productPool.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/transactionPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/transactionPool.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fileHandlers/TransactionPoolFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileHandlers/TransactionPoolFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/order/OrderPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/order/OrderPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/TransactionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/TransactionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/PoolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/PoolView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/PlaceOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/PlaceOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/ProcessSoldProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/ProcessSoldProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/users/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Cashier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/users/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -57,6 +67,11 @@
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="poolDisplayer.processingBehavior" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
@@ -143,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663756239778</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Worked on FileHandler -system.">
+      <created>1663758509793</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663758509793</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +192,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/fileHandlers/OrderPoolFileHandler.java</url>
           <line>15</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/poolDisplayer/PoolView.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

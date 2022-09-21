@@ -11,7 +11,7 @@ public class Manager extends User{
 
     public Manager() {
         super.actions = List.of(
-                "Review inventory / Register sold item",
+                "Review inventory",
                 "Review order list",
                 "Sign out");
     }

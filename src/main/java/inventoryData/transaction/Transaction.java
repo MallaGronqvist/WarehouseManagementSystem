@@ -4,6 +4,7 @@ import inventoryData.InventoryDataItem;
 import inventoryData.product.Product;
 import inventoryData.product.ProductPool;
 
+import java.util.Date;
 import java.util.List;
 
 public class Transaction extends InventoryDataItem {
@@ -12,16 +13,22 @@ public class Transaction extends InventoryDataItem {
     int quantity;
     private final String receiptNumber;
     private final Product product;
-    private final List<String> headers = List.of("Number", "Receipt number", "Product", "Quantity");
-    private final List<Integer> columnWidths = List.of(5, 10, 20, 10);
+    private TransactionType type;
+    private Date date;
 
-    public Transaction(String receiptNumber, Product product, int quantity) {
+    private final List<String> headers = List.of("Id", "Transaction Type", "Product", "Quantity", "Receipt number");
+    private final List<Integer> columnWidths = List.of(5, 20, 20, 10, 15);
+
+
+    public Transaction(TransactionType type, String receiptNumber, Product product, int quantity) {
+        this.type = type;
         this.receiptNumber = receiptNumber;
         this.product = product;
         this.quantity = quantity;
     }
 
-    public Transaction(int transactionId, int productId, int quantity, String receiptNumber) {
+    public Transaction(TransactionType type, int transactionId, int productId, int quantity, String receiptNumber) {
+        this.type = type;
         this.id = transactionId;
         Product result = ProductPool.getProductById(productId);
         if (result == null){
@@ -34,6 +41,11 @@ public class Transaction extends InventoryDataItem {
     }
 
     @Override
+    public List<String> getDisplayValues() {
+        return List.of(String.valueOf(id), type.toString(), product.getName(), String.valueOf(quantity), receiptNumber);
+    }
+
+    @Override
     public List<String> getHeaders() {
         return headers;
     }
@@ -43,16 +55,13 @@ public class Transaction extends InventoryDataItem {
         return columnWidths;
     }
 
-    @Override
-    public List<String> getDisplayValues() {
-        return List.of(receiptNumber, product.getName(), String.valueOf(quantity));
-    }
+
 
     @Override
     public String getSavable() {
         final String DELIMIT = ";";
-        String savable = id + DELIMIT + product.getId() + DELIMIT + quantity + DELIMIT + receiptNumber;
-        return savable;
+        return type + DELIMIT + id + DELIMIT + product.getId() +
+                DELIMIT + quantity + DELIMIT + receiptNumber;
     }
 
     @Override
@@ -70,5 +79,13 @@ public class Transaction extends InventoryDataItem {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public TransactionType getType() {
+        return type;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

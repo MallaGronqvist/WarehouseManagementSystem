@@ -1,5 +1,6 @@
 package poolDisplayer.processingBehavior;
 
+import inventoryData.transaction.TransactionType;
 import menus.mainMenu.MainMenu;
 import inventoryData.InventoryDataItem;
 import inventoryData.product.Product;
@@ -10,8 +11,8 @@ import inventoryData.transaction.TransactionPool;
 import java.util.List;
 
 public class ProcessSoldProduct implements ProcessingBehavior {
-    List<? extends InventoryDataItem> products;
-    Product selectedProduct;
+    private List<? extends InventoryDataItem> products;
+    private Product selectedProduct;
 
     @Override
     public void processOption(String input, List<? extends InventoryDataItem> data)
@@ -44,7 +45,8 @@ public class ProcessSoldProduct implements ProcessingBehavior {
     }
 
     private boolean registerTransaction(Product product, int quantity, String receiptNumber) {
-        return TransactionPool.addNewTransaction(new Transaction(receiptNumber, product, quantity));
+        return TransactionPool.addNewTransaction(
+                new Transaction(TransactionType.REMOVED, receiptNumber, product, quantity));
     }
 
     private String requestReceiptNumber() {

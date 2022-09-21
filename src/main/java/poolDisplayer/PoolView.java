@@ -13,10 +13,11 @@ public class PoolView {
     InventoryDataItem sampleItem;
     public PoolView(List<? extends InventoryDataItem> data) {
         try {
-        // Fail early if data is empty.
+        // Get a sample item or alternatively fail if data is empty.
         sampleItem = data.get(0);
 
-        } catch (IndexOutOfBoundsException exception) {
+        // sampleItem might be null if blanc space is mistakenly entered to empty data file
+        } catch (IndexOutOfBoundsException | NullPointerException exception) {
             System.out.println("No items were found.");
             new MainMenu();
         }
@@ -34,10 +35,10 @@ public class PoolView {
             System.out.print("Enter selected product id, " +
                     "or 'X' to exit: ");
         } else if (sampleItem instanceof Transaction){
-            System.out.println("Enter selected receipt number, " +
+            System.out.print("Enter selected transaction id, " +
                     "or 'X' to exit: ");
         } else if( sampleItem instanceof Order){
-            System.out.print("Enter id of the order you want to manage," +
+            System.out.print("Enter selected order id," +
                     "or 'X' to exit: ");
         }
     }

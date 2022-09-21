@@ -4,8 +4,8 @@ import menus.mainMenu.MainMenu;
 import menus.userMenu.UserMenu;
 import poolDisplayer.processingBehavior.PlaceOrder;
 import poolDisplayer.PoolDisplayer;
-import poolDisplayer.processingBehavior.ProcessSoldProduct;
 import inventoryData.product.ProductPool;
+import poolDisplayer.processingBehavior.ViewInventoryDataItem;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public abstract class User {
 
     protected void viewProductPool() {
 
-        new PoolDisplayer(ProductPool.getAllProducts(), new ProcessSoldProduct());
+        new PoolDisplayer(ProductPool.getAllProducts(), new ViewInventoryDataItem());
     }
 
     protected void viewSoonOutOfStockProducts(){

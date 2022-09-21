@@ -20,6 +20,13 @@ public class OrderPool implements Subject {
         }
     }
 
+    public static List<Order> getOrders(Product selectedProduct) {
+        List<Order> result = allOrders.stream()
+                .filter(order -> order.getProduct().equals(selectedProduct))
+                .collect(Collectors.toList());
+        return result;
+    }
+
     // This constructor is used only when reading from file.
     // Hence, no need to notify observer to save to file.
     private void addOrder(Order order) {

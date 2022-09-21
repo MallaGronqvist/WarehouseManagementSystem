@@ -1,10 +1,13 @@
 package users;
 
+import inventoryData.product.ProductPool;
 import menus.mainMenu.MainMenu;
 import menus.userMenu.UserMenu;
 import inventoryData.product.Product;
 import inventoryData.transaction.Transaction;
 import inventoryData.transaction.TransactionPool;
+import poolDisplayer.PoolDisplayer;
+import poolDisplayer.processingBehavior.ProcessSoldProduct;
 
 import java.util.List;
 import java.util.Scanner;
@@ -22,13 +25,18 @@ public class Cashier extends User {
     @Override
     public void performAction(int selectedOption) throws IndexOutOfBoundsException {
         switch (selectedOption) {
-                 case 1 -> super.viewProductPool();
+                 case 1 -> viewProductPool();
                  case 2 -> super.viewSoonOutOfStockProducts();
                  case 3 -> returnItem();
                  case 4-> navigateToMainMenu();
             default -> throw new IndexOutOfBoundsException();
         }
         new UserMenu(this);
+    }
+
+    @Override
+    protected void viewProductPool() {
+        new PoolDisplayer(ProductPool.getAllProducts(), new ProcessSoldProduct());
     }
 
     private void returnItem() {
@@ -41,7 +49,7 @@ public class Cashier extends User {
 
         Transaction transaction = null;
         try {
-            transaction = TransactionPool.getTransaction(receiptNumber);
+            transaction = TransactionPool.getTransactionByReceipt(receiptNumber);
             processReturn(transaction, receiptNumber);
         } catch (NullPointerException e) {
             System.out.println("No transaction was found with the given receipt number.");

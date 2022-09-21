@@ -1,5 +1,6 @@
-package product;
+package inventoryData.product;
 
+import inventoryData.InventoryDataItem;
 import utils.Observer;
 import utils.Subject;
 
@@ -9,12 +10,12 @@ import java.util.stream.Collectors;
 
 public class ProductPool implements Subject {
 
-    private static List<Product> allProducts = new ArrayList<>();
+    private static final List<Product> allProducts = new ArrayList<>();
     private static Observer observer;
 
     public ProductPool(List<InventoryDataItem> products) {
         for (InventoryDataItem item : products) {
-            addProduct((Product) item);
+            allProducts.add((Product) item);
         }
     }
 
@@ -41,20 +42,16 @@ public class ProductPool implements Subject {
         observer.update(allProducts);
     }
 
-    public void addProduct(Product product) {
-        allProducts.add(product);
+    public static Product getProductById(int productId) {
+        Product result = allProducts.stream()
+                .filter(product -> product.getId() == productId)
+                .findAny().orElse(null);
+        return result;
     }
 
     @Override
     public void registerObserver(Observer observer) {
-        this.observer = observer;
+        ProductPool.observer = observer;
     }
 
-    @Override
-    public void removeObserver(Observer observer) {
-
-    }
-
-    // getState
-    // SetState
 }

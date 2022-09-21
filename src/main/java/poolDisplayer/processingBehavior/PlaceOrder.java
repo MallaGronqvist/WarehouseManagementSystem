@@ -1,13 +1,12 @@
-package poolMVC.processingBehavior;
+package poolDisplayer.processingBehavior;
 
 import menus.mainMenu.MainMenu;
-import order.Order;
-import order.OrderPool;
-import product.InventoryDataItem;
-import product.Product;
+import inventoryData.order.Order;
+import inventoryData.order.OrderPool;
+import inventoryData.InventoryDataItem;
+import inventoryData.product.Product;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class PlaceOrder implements ProcessingBehavior {
     List<? extends InventoryDataItem> products;
@@ -57,24 +56,17 @@ public class PlaceOrder implements ProcessingBehavior {
     }
 
     private static void checkForNegativeQuantity(int quantity) throws IllegalArgumentException {
-        if (quantity < 1) {
-            throw new IllegalArgumentException();
-        }
+        if (quantity < 1) { throw new IllegalArgumentException(); }
     }
 
     private Product getProduct(int selectedId) throws NullPointerException {
-        InventoryDataItem product = null;
+        InventoryDataItem result = products.stream()
+                .filter(product -> product.getId() == selectedId)
+                .findAny().orElse(null);
 
-        for (InventoryDataItem item : products) {
-            if (((Product) item).getId() == selectedId) {
-                product = item;
-            }
-        }
+        if (result == null) { throw new NullPointerException(); }
 
-        if (product == null) {
-            throw new NullPointerException();
-        }
-        return (Product) product;
+        return (Product) result;
     }
 
     private boolean orderAnyway() {
@@ -96,14 +88,9 @@ public class PlaceOrder implements ProcessingBehavior {
             return answerIsYes();
         }
     }
-/*
-    private String readUserInput() {
-        Scanner keyboard = new Scanner(System.in);
-        return keyboard.nextLine();
-    }
-*/
+
     private void createOrder(Product product, int quantity) {
-        OrderPool.addOrder(new Order(product, quantity));
+        OrderPool.addNeWOrder(new Order(product, quantity));
     }
 
     private int requestQuantity() {

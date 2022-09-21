@@ -1,6 +1,6 @@
-package poolMVC.processingBehavior;
+package poolDisplayer.processingBehavior;
 
-import product.InventoryDataItem;
+import inventoryData.InventoryDataItem;
 
 import java.util.List;
 import java.util.Scanner;
@@ -9,6 +9,7 @@ public interface ProcessingBehavior {
 
     void processOption(String input, List<? extends InventoryDataItem> data)
             throws NumberFormatException, NullPointerException;
+
 
     default String readUserInput() {
         Scanner keyboard = new Scanner(System.in);

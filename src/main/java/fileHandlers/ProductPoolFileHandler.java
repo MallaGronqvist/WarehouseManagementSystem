@@ -1,7 +1,9 @@
-package utils;
+package fileHandlers;
 
-import product.InventoryDataItem;
-import product.Product;
+import inventoryData.InventoryDataItem;
+import inventoryData.product.Product;
+import utils.Observer;
+import utils.Subject;
 
 import java.util.List;
 
@@ -27,14 +29,15 @@ public class ProductPoolFileHandler extends FileHandler implements Observer {
             String shelf = productData[3];
             return (new Product(id, name, quantity, shelf));
         } catch (NumberFormatException | IndexOutOfBoundsException exception) {
-            System.out.println("Problem reading product file");
+            System.out.println("Warning: An error occurred while reading product file.");
+            System.out.println("Some product data may be corrupt.");
         }
         // Extra return statement to keep the compiler happy.
         return null;
     }
 
     @Override
-    public void update(List<Product> allProducts) {
+    public void update(List<? extends InventoryDataItem> allProducts) {
         saveToFile(allProducts);
     }
 }

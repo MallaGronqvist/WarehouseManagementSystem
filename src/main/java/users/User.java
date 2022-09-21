@@ -2,17 +2,26 @@ package users;
 
 import menus.mainMenu.MainMenu;
 import menus.userMenu.UserMenu;
-import poolMVC.processingBehavior.PlaceOrder;
-import poolMVC.PoolDisplayer;
-import poolMVC.processingBehavior.ProcessSoldProduct;
-import product.ProductPool;
+import poolDisplayer.processingBehavior.PlaceOrder;
+import poolDisplayer.PoolDisplayer;
+import poolDisplayer.processingBehavior.ProcessSoldProduct;
+import inventoryData.product.ProductPool;
+
+import java.util.List;
 
 public abstract class User {
+
+    List<String> actions;
+
+    public List<String> getActions() {
+        return actions;
+    }
+
     public void sessionLoop() {
         new UserMenu(this);
     }
 
-    public abstract void processMenuOption(int selectedOption) throws IndexOutOfBoundsException;
+    public abstract void performAction(int selectedOption) throws IndexOutOfBoundsException;
 
     protected void viewProductPool() {
 

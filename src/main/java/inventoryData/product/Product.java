@@ -1,25 +1,20 @@
-package product;
+package inventoryData.product;
 
-import utils.Observer;
-import utils.Subject;
+import inventoryData.InventoryDataItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Product extends InventoryDataItem {
-    private int id;
-    private String name;
-
-    private int quantity;
     String shelf;
+    private final int id;
+    private final String name;
+    private int quantity;
 
     // No price is registered here since that's in the separate payment system,
-    // and we don't want to change prices in two places....
-
+    // and we don't want to have to change prices in two places.
     // The list of headers is used when printing products.
-    private List<String> headers = List.of("Id", "Product", "Quantity", "Shelf");
-    private List<Integer> columnWidths = List.of(5, 20, 10, 10);
-
+    private final List<String> headers = List.of("Id", "Product", "Quantity", "Shelf");
+    private final List<Integer> columnWidths = List.of(5, 20, 10, 10);
 
     public Product(int id, String name, int quantity, String shelf) {
         this.id = id;
@@ -50,16 +45,15 @@ public class Product extends InventoryDataItem {
         return savable;
     }
 
-    public String getName() {
-        return name;
+    public void removeItems(int quantity) throws IllegalArgumentException {
+        if (this.quantity - quantity < 1 || quantity < 1) {
+            throw new IllegalArgumentException();
+        }
+        this.quantity -= quantity;
     }
 
-    public void removeItems(int quantity) throws IllegalArgumentException{
-        if(this.quantity - quantity < 1 || quantity < 1 ){
-            throw new IllegalArgumentException();
-        } else {
-            this.quantity -= quantity;
-        }
+    public String getName() {
+        return name;
     }
 
     public int getQuantity() {

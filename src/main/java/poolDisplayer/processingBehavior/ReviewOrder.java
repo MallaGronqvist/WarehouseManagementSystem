@@ -1,11 +1,11 @@
-package poolMVC.processingBehavior;
+package poolDisplayer.processingBehavior;
 
 import menus.mainMenu.MainMenu;
-import order.Order;
-import order.OrderPool;
-import product.InventoryDataItem;
-import product.Product;
-import product.ProductPool;
+import inventoryData.order.Order;
+import inventoryData.order.OrderPool;
+import inventoryData.InventoryDataItem;
+import inventoryData.product.Product;
+import inventoryData.product.ProductPool;
 
 import java.util.List;
 
@@ -31,14 +31,14 @@ public class ReviewOrder implements ProcessingBehavior {
 
         if(answer.equalsIgnoreCase("X")){
             new MainMenu();
-        } else {
-            switch (answer){
-                case "A" -> markOrderAsArrived();
-                case "C" -> confirmOrder();
-                case "R" -> rejectOrder();
-                default -> invalidOperation();
-            }
         }
+        switch (answer){
+            case "A" -> markOrderAsArrived();
+            case "C" -> confirmOrder();
+            case "R" -> rejectOrder();
+            default -> invalidOperation();
+        }
+
     }
 
     private void markOrderAsArrived() {
@@ -101,17 +101,12 @@ public class ReviewOrder implements ProcessingBehavior {
     }
 
     private Order getOrder(int selectedId) {
-        InventoryDataItem order = null;
+        InventoryDataItem result = orders.stream()
+                .filter(order -> order.getId() == selectedId)
+                .findAny().orElse(null);
 
-        for (InventoryDataItem item : orders) {
-            if (item.getId() == selectedId) {
-                order = item;
-            }
-        }
+        if (result == null) { throw new NullPointerException(); }
 
-        if (order == null) {
-            throw new NullPointerException();
-        }
-        return (Order) order;
+        return (Order) result;
     }
 }

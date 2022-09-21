@@ -1,4 +1,4 @@
-package poolMVC;
+package poolDisplayer;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,7 @@ public class Table {
         this.format = createFormat(columnWidths);
     }
 
-    public void showData() {
+    public void displayData() {
         generateBorder();
         generateHeader();
         generateBorder();

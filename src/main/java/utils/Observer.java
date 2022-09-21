@@ -1,9 +1,9 @@
 package utils;
 
-import product.Product;
+import inventoryData.InventoryDataItem;
 
 import java.util.List;
 
 public interface Observer {
-    void update(List<Product> allProducts);
+    void update(List<? extends InventoryDataItem> data);
 }

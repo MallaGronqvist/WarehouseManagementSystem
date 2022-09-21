@@ -1,7 +1,8 @@
-package poolMVC;
+package poolDisplayer;
 
-import poolMVC.processingBehavior.ProcessingBehavior;
-import product.InventoryDataItem;
+import menus.mainMenu.MainMenu;
+import poolDisplayer.processingBehavior.ProcessingBehavior;
+import inventoryData.InventoryDataItem;
 
 import java.util.List;
 
@@ -22,6 +23,15 @@ public class PoolModel {
 
     public void processOption(String input) throws NumberFormatException, NullPointerException{
 
+        // Not sure that this is ok...
+        if (input.equalsIgnoreCase("x")){
+            navigateToMainMenu();
+        }
+
         processor.processOption(input, data);
+    }
+
+    private void navigateToMainMenu() {
+        new MainMenu();
     }
 }

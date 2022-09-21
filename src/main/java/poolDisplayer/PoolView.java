@@ -1,9 +1,10 @@
-package poolMVC;
+package poolDisplayer;
 
-import order.Order;
-import product.InventoryDataItem;
-import product.Product;
-import transaction.Transaction;
+import menus.mainMenu.MainMenu;
+import inventoryData.order.Order;
+import inventoryData.InventoryDataItem;
+import inventoryData.product.Product;
+import inventoryData.transaction.Transaction;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +18,7 @@ public class PoolView {
 
         } catch (IndexOutOfBoundsException exception) {
             System.out.println("No items were found.");
-            return;
+            new MainMenu();
         }
 
         displayTable(data);
@@ -45,7 +46,7 @@ public class PoolView {
 
             Table table = new Table(sampleItem.getHeaders(), generateBody(data), sampleItem.getColumnWidths());
 
-            table.showData();
+            table.displayData();
 
     }
 
@@ -58,6 +59,6 @@ public class PoolView {
     }
 
     public void printInvalidOption() {
-        System.out.println("⚠️ You entered an invalid option.");
+        System.out.println("You entered an invalid option.");
     }
 }

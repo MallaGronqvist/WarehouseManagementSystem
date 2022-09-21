@@ -3,7 +3,7 @@ package utils;
 import java.io.IOException;
 import java.util.List;
 
-public class MenuPrinter {
+public class ViewPrinter {
 
     public static void clearConsole() {
         String operatingSystem = System.getProperty("os.name");

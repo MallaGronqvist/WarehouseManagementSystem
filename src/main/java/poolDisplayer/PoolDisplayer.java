@@ -1,7 +1,7 @@
-package poolMVC;
+package poolDisplayer;
 
-import poolMVC.processingBehavior.ProcessingBehavior;
-import product.InventoryDataItem;
+import poolDisplayer.processingBehavior.ProcessingBehavior;
+import inventoryData.InventoryDataItem;
 
 import java.util.List;
 

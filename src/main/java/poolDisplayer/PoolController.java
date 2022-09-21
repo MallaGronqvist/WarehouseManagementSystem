@@ -1,6 +1,4 @@
-package poolMVC;
-
-import menus.mainMenu.MainMenu;
+package poolDisplayer;
 
 import java.util.Scanner;
 
@@ -17,11 +15,6 @@ public class PoolController {
         Scanner keyboard = new Scanner(System.in);
         String input = keyboard.nextLine();
 
-        // Not sure that this is ok...
-        if (input.equalsIgnoreCase("x")){
-            navigateToMainMenu();
-        }
-
         try {
 
             model.processOption(input);
@@ -33,7 +26,5 @@ public class PoolController {
         }
     }
 
-    private void navigateToMainMenu() {
-        new MainMenu();
-    }
+
 }

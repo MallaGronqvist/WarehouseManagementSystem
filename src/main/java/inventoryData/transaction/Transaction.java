@@ -20,6 +20,7 @@ public class Transaction extends InventoryDataItem {
     private final List<Integer> columnWidths = List.of(5, 20, 20, 10, 15);
 
 
+    // Constructor for new transactions.
     public Transaction(TransactionType type, String receiptNumber, Product product, int quantity) {
         this.type = type;
         this.receiptNumber = receiptNumber;
@@ -27,6 +28,7 @@ public class Transaction extends InventoryDataItem {
         this.quantity = quantity;
     }
 
+    // Constructor used when reading from file.
     public Transaction(TransactionType type, int transactionId, int productId, int quantity, String receiptNumber) {
         this.type = type;
         this.id = transactionId;

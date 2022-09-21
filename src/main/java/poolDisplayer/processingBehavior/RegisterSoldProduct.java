@@ -10,7 +10,7 @@ import inventoryData.transaction.TransactionPool;
 
 import java.util.List;
 
-public class ProcessSoldProduct implements ProcessingBehavior {
+public class RegisterSoldProduct implements ProcessingBehavior {
     private List<? extends InventoryDataItem> products;
     private Product selectedProduct;
 

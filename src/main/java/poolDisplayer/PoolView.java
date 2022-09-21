@@ -5,6 +5,7 @@ import inventoryData.order.Order;
 import inventoryData.InventoryDataItem;
 import inventoryData.product.Product;
 import inventoryData.transaction.Transaction;
+import utils.Table;
 
 import java.util.List;
 import java.util.stream.Collectors;

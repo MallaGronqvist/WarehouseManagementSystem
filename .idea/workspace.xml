@@ -9,24 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Worked on FileHandler -system.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/TransactionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/ViewInventoryDataItem.java" afterDir="false" />
+    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Added functionality for the admin.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/cashierTests/CashierTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/orderPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/orderPool.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/productPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/productPool.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/transactionPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/transactionPool.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fileHandlers/TransactionPoolFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileHandlers/TransactionPoolFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/order/OrderPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/order/OrderPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fileHandlers/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileHandlers/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/TransactionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/TransactionPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/PoolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/PoolView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/PlaceOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/PlaceOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/ProcessSoldProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/ProcessSoldProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/ProcessSoldProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/RegisterSoldProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/users/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Cashier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/users/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/product/ProductPoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/product/ProductPoolTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +65,7 @@
       <recent name="poolDisplayer.processingBehavior" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.CashierTests.placeOrderTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="InventorySystem" />
@@ -86,17 +79,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductPoolTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CashierTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventorySystem" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="inventoryData.*" />
+          <option name="PATTERN" value="cashierTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product" />
-      <option name="MAIN_CLASS_NAME" value="product.ProductPoolTest" />
+      <option name="PACKAGE_NAME" value="cashierTests" />
+      <option name="MAIN_CLASS_NAME" value="cashierTests.CashierTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CashierTests.getTransactionByReceiptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventorySystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cashierTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cashierTests" />
+      <option name="MAIN_CLASS_NAME" value="cashierTests.CashierTests" />
+      <option name="METHOD_NAME" value="getTransactionByReceiptTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CashierTests.placeOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventorySystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cashierTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cashierTests" />
+      <option name="MAIN_CLASS_NAME" value="cashierTests.CashierTests" />
+      <option name="METHOD_NAME" value="placeOrderTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CashierTests.removeItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventorySystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cashierTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cashierTests" />
+      <option name="MAIN_CLASS_NAME" value="cashierTests.CashierTests" />
+      <option name="METHOD_NAME" value="removeItemTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -116,8 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CashierTests.placeOrderTest" />
+        <item itemvalue="JUnit.CashierTests" />
+        <item itemvalue="JUnit.CashierTests.getTransactionByReceiptTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ProductPoolTest" />
+        <item itemvalue="JUnit.CashierTests.removeItemTest" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663758509793</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added functionality for the admin.">
+      <created>1663768892634</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663768892634</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,7 +234,8 @@
     <MESSAGE value="Tried to recap..." />
     <MESSAGE value="Worked on Order list -features." />
     <MESSAGE value="Worked on FileHandler -system." />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked on FileHandler -system." />
+    <MESSAGE value="Added functionality for the admin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functionality for the admin." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -195,7 +247,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/poolDisplayer/PoolView.java</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>

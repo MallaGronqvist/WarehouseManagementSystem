@@ -7,7 +7,7 @@ import inventoryData.product.Product;
 import inventoryData.transaction.Transaction;
 import inventoryData.transaction.TransactionPool;
 import poolDisplayer.PoolDisplayer;
-import poolDisplayer.processingBehavior.ProcessSoldProduct;
+import poolDisplayer.processingBehavior.RegisterSoldProduct;
 
 import java.util.List;
 import java.util.Scanner;
@@ -36,7 +36,7 @@ public class Cashier extends User {
 
     @Override
     protected void viewProductPool() {
-        new PoolDisplayer(ProductPool.getAllProducts(), new ProcessSoldProduct());
+        new PoolDisplayer(ProductPool.getAllProducts(), new RegisterSoldProduct());
     }
 
     private void returnItem() {

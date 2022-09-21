@@ -29,7 +29,7 @@ public class MainMenuModel extends MenuModel {
     }
 
     private void exit() {
-        // Save to file if file subject observer not implemented on every pool
+
         System.exit(0);
     }
 }

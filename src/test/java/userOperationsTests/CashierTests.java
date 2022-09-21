@@ -1,4 +1,4 @@
-package cashierTests;
+package userOperationsTests;
 
 import inventoryData.InventoryDataItem;
 import inventoryData.order.Order;
@@ -10,7 +10,6 @@ import inventoryData.transaction.TransactionPool;
 import inventoryData.transaction.TransactionType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import poolDisplayer.processingBehavior.PlaceOrder;
 import utils.Observer;
 
 import java.util.ArrayList;
@@ -28,6 +27,7 @@ public class CashierTests {
 
     Transaction transaction;
 
+    // static pools mix it up!!
     @BeforeEach
     void setUp(){
         List<InventoryDataItem> products = new ArrayList<>();
@@ -38,14 +38,20 @@ public class CashierTests {
 
         List<InventoryDataItem> transactions = new ArrayList<>();
         transaction = new Transaction(
-                TransactionType.REMOVED, "1234",
+                TransactionType.REMOVAL, "9999",
                 ProductPool.getProductById(46), 1);
         transactions.add(transaction);
         transactionPool = new TransactionPool(transactions);
 
         List<InventoryDataItem> orders = new ArrayList<>();
+        orders.add(new Order(ProductPool.getProductById(13), 50));
         orderPool = new OrderPool(orders);
 
+        Observer observer = data -> {};
+
+        orderPool.registerObserver(observer);
+
+        transactionPool.registerObserver(observer);
     }
 
     @Test
@@ -67,7 +73,7 @@ public class CashierTests {
     @Test
     public void getTransactionByReceiptTest(){
 
-        Transaction testTransaction = TransactionPool.getTransactionByReceipt("1234");
+        Transaction testTransaction = TransactionPool.getTransactionByReceipt("9999");
         assertEquals(transaction.getReceiptNumber(), testTransaction.getReceiptNumber());
     }
 
@@ -77,21 +83,42 @@ public class CashierTests {
         assertThrows(NullPointerException.class, () -> TransactionPool.getTransactionByReceipt("0"));
 
     }
+/*
     @Test
     public void placeOrderTest(){
-        Product product = ProductPool.getProductById(13);
+        Product product = productPool.getProductById(13);
         int quantity = 100;
-        Observer observer = new Observer() {
-            @Override
-            public void update(List<? extends InventoryDataItem> data) {
 
-            }
-        };
-        orderPool.registerObserver(observer);
-        OrderPool.addNeWOrder(new Order(product, quantity));
-        transactionPool.registerObserver(observer);
-        TransactionPool.addNewTransaction(new Transaction(TransactionType.ORDERED, "-", product, quantity));
+        Order testOrder = new Order(product, quantity);
 
-        assertEquals(orderPool.getAllOrders().size(), 1);
+        orderPool.addNeWOrder(testOrder);
+
+ //       transactionPool.addNewTransaction(new Transaction(TransactionType.ORDERED, "-", product, quantity));
+
+        assertEquals(testOrder, orderPool.getOrderById(123));
     }
+*/
+    @Test
+    public void returnItemUpdatedQuantityTest(){
+
+        Product product = transaction.getProduct();
+        int quantityBefore = product.getQuantity();
+        int addedQuantity = transaction.getQuantity();
+        int totalQuantity = quantityBefore + addedQuantity;
+        product.addItems(transaction.getQuantity());
+
+        assertEquals(product.getQuantity(), totalQuantity);
+    }
+    /*
+    @Test
+    public void returnItemDeleteTransaction(){
+
+
+        transactionPool.removeTransaction(transaction);
+
+        assertThrows(NullPointerException.class,
+                    () -> transactionPool.getTransactionByReceipt(transaction.getReceiptNumber()));
+    }
+
+     */
 }

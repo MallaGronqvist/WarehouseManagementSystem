@@ -28,7 +28,7 @@ public class PoolModel {
             navigateToMainMenu();
         }
 
-        processor.processOption(input, data);
+        processor.processData(input, data);
     }
 
     private void navigateToMainMenu() {

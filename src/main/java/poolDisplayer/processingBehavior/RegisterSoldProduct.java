@@ -15,8 +15,9 @@ public class RegisterSoldProduct implements ProcessingBehavior {
     private Product selectedProduct;
 
     @Override
-    public void processOption(String input, List<? extends InventoryDataItem> data)
+    public void processData(String input, List<? extends InventoryDataItem> data)
             throws NumberFormatException, NullPointerException {
+
         this.products = data;
 
         int selectedId = Integer.parseInt(input);
@@ -46,7 +47,7 @@ public class RegisterSoldProduct implements ProcessingBehavior {
 
     private boolean registerTransaction(Product product, int quantity, String receiptNumber) {
         return TransactionPool.addNewTransaction(
-                new Transaction(TransactionType.REMOVED, receiptNumber, product, quantity));
+                new Transaction(TransactionType.REMOVAL, receiptNumber, product, quantity));
     }
 
     private String requestReceiptNumber() {

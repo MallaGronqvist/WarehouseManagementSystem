@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class TransactionPool implements Subject {
     private static final List<Transaction> allTransactions = new ArrayList<>();
-    static int idCount = 0;
+    static int idCount;
 
     private static Observer observer;
 
@@ -20,6 +20,8 @@ public class TransactionPool implements Subject {
         for (InventoryDataItem item: transactions) {
             allTransactions.add((Transaction) item);
         }
+        int indexLastItem = allTransactions.size() -1;
+        this.idCount = allTransactions.get(indexLastItem).getId();
     }
 
     public static boolean addNewTransaction(Transaction transaction) {
@@ -67,7 +69,7 @@ public class TransactionPool implements Subject {
     public static List<Transaction> getSales(Product selectedProduct) {
         List<Transaction> result = allTransactions.stream().
                 filter(transaction -> transaction.getProduct().equals(selectedProduct)).
-                filter(transaction -> transaction.getType().equals(TransactionType.REMOVED)).
+                filter(transaction -> transaction.getType().equals(TransactionType.REMOVAL)).
                 collect(Collectors.toList());
         return result;
     }

@@ -5,7 +5,7 @@ import inventoryData.order.OrderPool;
 import inventoryData.transaction.TransactionPool;
 import menus.userMenu.UserMenu;
 import poolDisplayer.PoolDisplayer;
-import poolDisplayer.processingBehavior.ViewInventoryDataItem;
+import poolDisplayer.processingBehavior.DisplayInventoryDataItem;
 
 import java.util.List;
 
@@ -32,11 +32,11 @@ public class Admin extends User{
     }
 
     private void viewTransactions() {
-        new PoolDisplayer(TransactionPool.getAllTransactions(), new ViewInventoryDataItem());
+        new PoolDisplayer(TransactionPool.getAllTransactions(), new DisplayInventoryDataItem());
     }
 
     private void viewOrders() {
-        new PoolDisplayer(OrderPool.getAllOrders(), new ViewInventoryDataItem());
+        new PoolDisplayer(OrderPool.getAllOrders(), new DisplayInventoryDataItem());
     }
 
 

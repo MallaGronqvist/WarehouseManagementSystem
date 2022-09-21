@@ -7,7 +7,8 @@ import java.util.Scanner;
 
 public interface ProcessingBehavior {
 
-    void processOption(String input, List<? extends InventoryDataItem> data)
+
+    void processData(String input, List<? extends InventoryDataItem> data)
             throws NumberFormatException, NullPointerException;
 
 

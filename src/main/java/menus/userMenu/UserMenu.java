@@ -8,6 +8,7 @@ public class UserMenu {
     User user;
     public UserMenu(User user) {
         this.user = user;
+
         UserMenuModel model = new UserMenuModel(user);
         MenuView view = new MenuView("*** Available Options ***", model.getMenuOptions());
         MenuController controller = new MenuController(model, view);

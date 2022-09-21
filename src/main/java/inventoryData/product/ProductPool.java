@@ -19,6 +19,9 @@ public class ProductPool implements Subject {
         }
     }
 
+    public ProductPool() {
+    }
+
     public static List<Product> getAllProducts() {
         return allProducts;
     }

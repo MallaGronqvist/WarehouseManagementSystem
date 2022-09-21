@@ -1,2 +1,4 @@
 false;1;6;30
 false;2;6;5
+false;3;5;50
+false;4;6;20

@@ -8,12 +8,16 @@ public class MenuView {
     public MenuView(String title, List<String> menuOptions) {
         ViewPrinter.clearConsole();
 
-        System.out.println(title);
-        System.out.println();
+        displayTitle(title);
 
         ViewPrinter.listOptions(menuOptions);
 
         requestUserInput();
+    }
+
+    private static void displayTitle(String title) {
+        System.out.println(title);
+        System.out.println();
     }
 
     public void requestUserInput() {

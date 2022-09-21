@@ -18,7 +18,11 @@ public class OrderPool implements Subject {
         for (InventoryDataItem item : orders) {
             addOrder((Order) item);
         }
+        int indexLastItem = allOrders.size() -1;
+        this.idCount = allOrders.get(indexLastItem).getId();
     }
+
+    public OrderPool() {}
 
     public static List<Order> getOrders(Product selectedProduct) {
         List<Order> result = allOrders.stream()
@@ -37,7 +41,7 @@ public class OrderPool implements Subject {
         return allOrders;
     }
 
-    public static void addNeWOrder(Order order) {
+    public static void addNewOrder(Order order) {
         int orderId = ++idCount;
         order.setId(orderId);
         allOrders.add(order);

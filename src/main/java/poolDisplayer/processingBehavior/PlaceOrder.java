@@ -16,7 +16,7 @@ public class PlaceOrder implements ProcessingBehavior {
     Product selectedProduct;
 
     @Override
-    public void processOption(String input, List<? extends InventoryDataItem> data)
+    public void processData(String input, List<? extends InventoryDataItem> data)
             throws NullPointerException, NumberFormatException {
 
         this.products = data;
@@ -94,8 +94,8 @@ public class PlaceOrder implements ProcessingBehavior {
 
     private void createOrder(Product product, int quantity) {
 
-        OrderPool.addNeWOrder(new Order(product, quantity));
-        TransactionPool.addNewTransaction(new Transaction(TransactionType.ORDERED, "-", product, quantity));
+        OrderPool.addNewOrder(new Order(product, quantity));
+        TransactionPool.addNewTransaction(new Transaction(TransactionType.ORDER, "-", product, quantity));
     }
 
     private int requestQuantity() {

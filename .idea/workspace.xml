@@ -9,19 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Did some minor changes and refactoring.">
+    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Did some refactoring.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/orderPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/orderPool.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menus/mainMenu/MainMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/mainMenu/MainMenuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/PoolModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/PoolModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/PoolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/PoolView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/DisplayInventoryDataItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/DisplayInventoryDataItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/PlaceOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/PlaceOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/RegisterSoldProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/RegisterSoldProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/ReviewOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poolDisplayer/processingBehavior/ReviewOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/users/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Cashier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ViewPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DisplayHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/userOperationsTests/CashierTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userOperationsTests/CashierTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,35 +57,7 @@
       <recent name="poolDisplayer.processingBehavior" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <module name="InventorySystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AdminTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventorySystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="userOperationsTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="userOperationsTests" />
-      <option name="MAIN_CLASS_NAME" value="userOperationsTests.AdminTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CashierTests">
     <configuration name="CashierTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventorySystem" />
       <extension name="coverage">
@@ -111,7 +73,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CashierTests.returnItemDeleteTransaction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CashierTests.getTransactionByReceiptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventorySystem" />
       <extension name="coverage">
         <pattern>
@@ -119,15 +81,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cashierTests" />
+      <option name="PACKAGE_NAME" value="userOperationsTests" />
       <option name="MAIN_CLASS_NAME" value="userOperationsTests.CashierTests" />
-      <option name="METHOD_NAME" value="returnItemDeleteTransaction" />
+      <option name="METHOD_NAME" value="getTransactionByReceiptTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ManagerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CashierTests.removeItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventorySystem" />
       <extension name="coverage">
         <pattern>
@@ -135,20 +97,53 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="userFunctionalityTests" />
-      <option name="MAIN_CLASS_NAME" value="userOperationsTests.ManagerTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="userOperationsTests" />
+      <option name="MAIN_CLASS_NAME" value="userOperationsTests.CashierTests" />
+      <option name="METHOD_NAME" value="removeItemTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CashierTests.removeLastItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventorySystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="userOperationsTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="userOperationsTests" />
+      <option name="MAIN_CLASS_NAME" value="userOperationsTests.CashierTests" />
+      <option name="METHOD_NAME" value="removeLastItemTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CashierTests.returnItemUpdatedQuantityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventorySystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="userOperationsTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="userOperationsTests" />
+      <option name="MAIN_CLASS_NAME" value="userOperationsTests.CashierTests" />
+      <option name="METHOD_NAME" value="returnItemUpdatedQuantityTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.AdminTests" />
-        <item itemvalue="JUnit.ManagerTests" />
         <item itemvalue="JUnit.CashierTests" />
-        <item itemvalue="JUnit.CashierTests.returnItemDeleteTransaction" />
+        <item itemvalue="JUnit.CashierTests.getTransactionByReceiptTest" />
+        <item itemvalue="JUnit.CashierTests.returnItemUpdatedQuantityTest" />
+        <item itemvalue="JUnit.CashierTests.removeLastItemTest" />
+        <item itemvalue="JUnit.CashierTests.removeItemTest" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663793236790</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Did some refactoring.">
+      <created>1663831055913</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1663831055913</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,7 +240,8 @@
     <MESSAGE value="Added functionality for the admin." />
     <MESSAGE value="Did some minor changes." />
     <MESSAGE value="Did some minor changes and refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Did some minor changes and refactoring." />
+    <MESSAGE value="Did some refactoring." />
+    <option name="LAST_COMMIT_MESSAGE" value="Did some refactoring." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

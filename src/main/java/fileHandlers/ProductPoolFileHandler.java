@@ -20,7 +20,7 @@ public class ProductPoolFileHandler extends FileHandler implements Observer {
     }
 
     @Override
-    protected <T extends InventoryDataItem> InventoryDataItem parseLine(String line) {
+    protected InventoryDataItem parseLine(String line) {
         try {
             final String DELIMIT = ";";
             String[] productData = line.split(DELIMIT);

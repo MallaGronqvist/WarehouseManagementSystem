@@ -21,7 +21,7 @@ public class OrderPoolFileHandler extends FileHandler implements Observer {
     }
 
     @Override
-    protected <T extends InventoryDataItem> InventoryDataItem parseLine(String line) {
+    protected InventoryDataItem parseLine(String line) {
         try {
             final String DELIMIT = ";";
             String[] orderData = line.split(DELIMIT);

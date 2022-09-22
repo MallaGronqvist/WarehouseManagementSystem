@@ -2,8 +2,8 @@ package users;
 
 import menus.userMenu.UserMenu;
 import inventoryData.order.OrderPool;
-import poolDisplayer.PoolDisplayer;
-import poolDisplayer.processingBehavior.ReviewOrder;
+import inventoryDataDisplay.InventoryDataMenu;
+import inventoryDataDisplay.processingBehavior.ReviewOrder;
 
 import java.util.List;
 
@@ -28,6 +28,6 @@ public class Manager extends User{
     }
 
     private void viewOrderList() {
-        new PoolDisplayer(OrderPool.getAllOrders(), new ReviewOrder());
+        new InventoryDataMenu(OrderPool.getAllOrders(), new ReviewOrder());
     }
 }

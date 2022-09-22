@@ -4,8 +4,8 @@ package users;
 import inventoryData.order.OrderPool;
 import inventoryData.transaction.TransactionPool;
 import menus.userMenu.UserMenu;
-import poolDisplayer.PoolDisplayer;
-import poolDisplayer.processingBehavior.DisplayInventoryDataItem;
+import inventoryDataDisplay.InventoryDataMenu;
+import inventoryDataDisplay.processingBehavior.DisplayInventoryDataItem;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class Admin extends User{
 
     public Admin() {
         super.actions = List.of(
-                "View inventory",
+                "View Inventory",
                 "View Transactions",
                 "View Orders",
                 "Sign out");
@@ -32,11 +32,11 @@ public class Admin extends User{
     }
 
     private void viewTransactions() {
-        new PoolDisplayer(TransactionPool.getAllTransactions(), new DisplayInventoryDataItem());
+        new InventoryDataMenu(TransactionPool.getAllTransactions(), new DisplayInventoryDataItem());
     }
 
     private void viewOrders() {
-        new PoolDisplayer(OrderPool.getAllOrders(), new DisplayInventoryDataItem());
+        new InventoryDataMenu(OrderPool.getAllOrders(), new DisplayInventoryDataItem());
     }
 
 

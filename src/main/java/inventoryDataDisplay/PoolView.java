@@ -1,4 +1,4 @@
-package poolDisplayer;
+package inventoryDataDisplay;
 
 import menus.mainMenu.MainMenu;
 import inventoryData.order.Order;
@@ -14,17 +14,19 @@ import java.util.stream.Collectors;
 public class PoolView {
     InventoryDataItem sampleItem;
     public PoolView(List<? extends InventoryDataItem> data) {
+        DisplayHelper.clearConsole();
+
         try {
         // Get a sample item or alternatively fail if data is empty.
         sampleItem = data.get(0);
+
+        displayTable(data);
 
         // sampleItem might be null if blanc space is mistakenly entered to empty data file
         } catch (IndexOutOfBoundsException | NullPointerException exception) {
             DisplayHelper.displayText("No items were found.");
             new MainMenu();
         }
-
-        displayTable(data);
     }
 
     private void displayTable(List<? extends InventoryDataItem> data) {

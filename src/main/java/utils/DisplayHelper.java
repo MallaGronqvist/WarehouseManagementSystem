@@ -5,6 +5,7 @@ import users.User;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
 
 public class DisplayHelper {
 
@@ -68,5 +69,14 @@ public class DisplayHelper {
 
     public static void displayText(String text){
         System.out.println(text);
+    }
+
+    public static void waitForEnter(){
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.println();
+        System.out.print("Press enter to continue.");
+
+        keyboard.nextLine();
     }
 }

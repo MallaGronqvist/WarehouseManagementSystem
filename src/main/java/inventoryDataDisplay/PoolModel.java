@@ -1,7 +1,7 @@
-package poolDisplayer;
+package inventoryDataDisplay;
 
 import menus.mainMenu.MainMenu;
-import poolDisplayer.processingBehavior.ProcessingBehavior;
+import inventoryDataDisplay.processingBehavior.ProcessingBehavior;
 import inventoryData.InventoryDataItem;
 import utils.DisplayHelper;
 

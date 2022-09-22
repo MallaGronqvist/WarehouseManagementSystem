@@ -1,6 +1,5 @@
-package poolDisplayer.processingBehavior;
+package inventoryDataDisplay.processingBehavior;
 
-import menus.mainMenu.MainMenu;
 import inventoryData.order.Order;
 import inventoryData.order.OrderPool;
 import inventoryData.InventoryDataItem;
@@ -23,6 +22,8 @@ public class ReviewOrder implements ProcessingBehavior {
         displayOrderDetails(selectedOrder);
 
         manageOrder();
+
+        DisplayHelper.waitForEnter();
     }
 
     private void manageOrder() {
@@ -30,13 +31,11 @@ public class ReviewOrder implements ProcessingBehavior {
         String answer = readUserInput();
         answer = answer.toUpperCase();
 
-        if(answer.equalsIgnoreCase("X")){
-            new MainMenu();
-        }
         switch (answer){
             case "A" -> markOrderAsArrived();
             case "C" -> confirmOrder();
             case "R" -> rejectOrder();
+            case "X" -> DisplayHelper.navigateToUserMenu(answer);
             default -> invalidOperation();
         }
 
@@ -59,7 +58,7 @@ public class ReviewOrder implements ProcessingBehavior {
         if (selectedOrder.isConfirmed()){
             DisplayHelper.displayText("Order is already confirmed.");
         } else {
-            selectedOrder.setConfirmed(true);
+            OrderPool.confirmOrder(selectedOrder);
             DisplayHelper.displayText("Order was confirmed.");
         }
     }
@@ -89,15 +88,17 @@ public class ReviewOrder implements ProcessingBehavior {
         if (selectedOrder.isConfirmed()){
             DisplayHelper.displayText("'A' - Arrived");
         }
-        DisplayHelper.displayText("'X' - Quit");
+        DisplayHelper.displayText("'X' - Go Back");
         DisplayHelper.displayText("Enter choice: ");
     }
 
     private void displayOrderDetails(Order selectedOrder) {
+        DisplayHelper.clearConsole();
         DisplayHelper.displayHeader("Order details");
         DisplayHelper.displayText("Product: " + selectedOrder.getProduct().getName());
         DisplayHelper.displayText("Items in stock: " + selectedOrder.getProduct().getQuantity());
-        DisplayHelper.displayText("Ordered quantity: " + + selectedOrder.getQuantity());
+        DisplayHelper.displayText("Ordered quantity: " + selectedOrder.getQuantity());
+        DisplayHelper.displayText("");
     }
 
     private Order getOrder(int selectedId) {

@@ -1,13 +1,12 @@
 package users;
 
-import inventoryData.product.ProductPool;
-import menus.mainMenu.MainMenu;
-import menus.userMenu.UserMenu;
 import inventoryData.product.Product;
+import inventoryData.product.ProductPool;
 import inventoryData.transaction.Transaction;
 import inventoryData.transaction.TransactionPool;
-import poolDisplayer.PoolDisplayer;
-import poolDisplayer.processingBehavior.RegisterSoldProduct;
+import menus.userMenu.UserMenu;
+import inventoryDataDisplay.InventoryDataMenu;
+import inventoryDataDisplay.processingBehavior.RegisterSoldProduct;
 import utils.DisplayHelper;
 
 import java.util.List;
@@ -23,13 +22,30 @@ public class Cashier extends User {
                 "Sign out");
     }
 
+    private static boolean returnConfirmed() {
+        DisplayHelper.requestInput("Enter 'C' to confirm return.");
+        String input = readUserInput();
+        DisplayHelper.navigateToUserMenu(input);
+        String answer = input.toUpperCase();
+
+        if ("C".equals(answer)) {
+            return true;
+        }
+        return returnConfirmed();
+    }
+
+    private static String readUserInput() {
+        Scanner keyboard = new Scanner(System.in);
+        return keyboard.nextLine();
+    }
+
     @Override
     public void performAction(int selectedOption) throws IndexOutOfBoundsException {
         switch (selectedOption) {
-                 case 1 -> viewProductPool();
-                 case 2 -> super.viewSoonOutOfStockProducts();
-                 case 3 -> returnItem();
-                 case 4-> navigateToMainMenu();
+            case 1 -> viewProductPool();
+            case 2 -> super.viewSoonOutOfStockProducts();
+            case 3 -> returnItem();
+            case 4 -> navigateToMainMenu();
             default -> throw new IndexOutOfBoundsException();
         }
         new UserMenu(this);
@@ -37,22 +53,27 @@ public class Cashier extends User {
 
     @Override
     protected void viewProductPool() {
-        new PoolDisplayer(ProductPool.getAllProducts(), new RegisterSoldProduct());
+        new InventoryDataMenu(ProductPool.getAllProducts(), new RegisterSoldProduct());
     }
 
     private void returnItem() {
+        DisplayHelper.clearConsole();
         DisplayHelper.displayHeader("Return item");
-        DisplayHelper.requestInput("Enter receipt number");
+        DisplayHelper.requestInput("Enter receipt number.");
         String receiptNumber = readUserInput();
 
         DisplayHelper.navigateToUserMenu(receiptNumber);
 
-        Transaction transaction = null;
+        Transaction transaction;
         try {
+            if (receiptNumber.equals("-")) {
+                throw new IllegalArgumentException();
+            }
             transaction = TransactionPool.getTransactionByReceipt(receiptNumber);
             processReturn(transaction, receiptNumber);
-        } catch (NullPointerException e) {
+        } catch (NullPointerException | IllegalArgumentException exception) {
             DisplayHelper.displayText("No transaction was found with the given receipt number.");
+            DisplayHelper.waitForEnter();
             returnItem();
         }
     }
@@ -61,33 +82,17 @@ public class Cashier extends User {
         DisplayHelper.displayText("Item found with receiptNumber " + receiptNumber + ":");
         DisplayHelper.displayText(transaction.getProduct().getName());
 
-        if (returnConfirmed()){
+        if (returnConfirmed()) {
             try {
                 TransactionPool.removeTransaction(transaction);
                 Product product = transaction.getProduct();
-                product.addItems(transaction.getQuantity());
-                System.out.println("Item was successfully returned.");
+                ProductPool.addItemsToProduct(product, transaction.getQuantity());
+
+                DisplayHelper.displayText("Item was successfully returned.");
+                DisplayHelper.waitForEnter();
             } catch (NullPointerException e) {
-                System.out.println("Item has already been returned by another cashier.");
+                DisplayHelper.displayText("Item has already been returned by another cashier.");
             }
         }
-    }
-
-    private static boolean returnConfirmed() {
-        DisplayHelper.requestInput("Enter 'C' to confirm return.");
-        String input = readUserInput();
-        DisplayHelper.navigateToUserMenu(input);
-
-        String answer = input.toUpperCase();
-
-        switch (answer){
-            case "C" -> { return true; }
-            default -> { return returnConfirmed();}
-        }
-    }
-
-    private static String readUserInput() {
-        Scanner keyboard = new Scanner(System.in);
-        return keyboard.nextLine();
     }
 }

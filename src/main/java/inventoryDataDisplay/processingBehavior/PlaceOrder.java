@@ -1,4 +1,4 @@
-package poolDisplayer.processingBehavior;
+package inventoryDataDisplay.processingBehavior;
 
 import inventoryData.transaction.Transaction;
 import inventoryData.transaction.TransactionPool;
@@ -25,10 +25,14 @@ public class PlaceOrder implements ProcessingBehavior {
         this.selectedProduct = getProduct(selectedId);
 
         prepareOrder();
+
+        DisplayHelper.waitForEnter();
     }
 
     private void prepareOrder() {
+        DisplayHelper.clearConsole();
         DisplayHelper.displayHeader("Create new order");
+        DisplayHelper.displayText("Product: " + selectedProduct.getName());
 
         boolean placeNewOrder = true;
 
@@ -42,7 +46,7 @@ public class PlaceOrder implements ProcessingBehavior {
             int quantity = requestQuantity();
 
             createOrder(selectedProduct, quantity);
-            System.out.println("An order was created successfully.");
+            DisplayHelper.displayText("An order was created successfully.");
         } else {
             new MainMenu();
         }
@@ -97,7 +101,7 @@ public class PlaceOrder implements ProcessingBehavior {
     private int requestQuantity() {
         int quantity;
 
-        DisplayHelper.requestInput("Enter product quantity.");
+        DisplayHelper.requestInput("Enter item quantity for new order.");
         String input = readUserInput();
         DisplayHelper.navigateToUserMenu(input);
 

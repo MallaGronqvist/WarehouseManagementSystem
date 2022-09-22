@@ -1,44 +1,42 @@
 package inventoryData.transaction;
 
+import fileHandlers.TransactionPoolFileHandler;
 import inventoryData.InventoryDataItem;
-import inventoryData.product.Product;
 import utils.Observer;
 import utils.Subject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class TransactionPool implements Subject {
-    private static final List<Transaction> allTransactions = new ArrayList<>();
+    private static List<Transaction> allTransactions = new ArrayList<>();
     static int idCount;
-
     private static Observer observer;
 
     public TransactionPool(List<InventoryDataItem> transactions) {
-        for (InventoryDataItem item: transactions) {
+        for (InventoryDataItem item : transactions) {
             allTransactions.add((Transaction) item);
         }
-        int indexLastItem = allTransactions.size() -1;
-        this.idCount = allTransactions.get(indexLastItem).getId();
+        int indexLastItem = allTransactions.size() - 1;
+        idCount = allTransactions.get(indexLastItem).getId();
     }
 
-    public static boolean addNewTransaction(Transaction transaction) {
+    public static boolean notInTransactionPool(String receiptNumber) {
         Transaction result = allTransactions.stream()
-                .filter(item -> Objects.equals(item.getReceiptNumber(), transaction.getReceiptNumber()))
+                .filter(item -> Objects.equals(item.getReceiptNumber(), receiptNumber))
                 .findAny().orElse(null);
 
-        boolean receiptNumberAlreadyRegistered = (result != null);
+        boolean receiptNumberNotRegistered = (result == null);
 
-        if (receiptNumberAlreadyRegistered) {
-            return false;
-        }
+        return receiptNumberNotRegistered;
+    }
 
+    public static void addNewTransaction(Transaction transaction) {
         transaction.setId(++idCount);
         allTransactions.add(transaction);
         observer.update(allTransactions);
-        return true;
     }
 
     public static Transaction getTransactionByReceipt(String receiptNumber) throws NullPointerException {
@@ -46,17 +44,9 @@ public class TransactionPool implements Subject {
                 .filter(item -> Objects.equals(item.getReceiptNumber(), receiptNumber))
                 .findAny().orElse(null);
 
-        if (result == null) { throw new NullPointerException(); }
-
-        return result;
-    }
-
-    public static Transaction getTransactionById(int id) throws NullPointerException {
-        Transaction result = allTransactions.stream()
-                .filter(item -> item.getId() == id)
-                .findAny().orElse(null);
-
-        if (result == null) { throw new NullPointerException(); }
+        if (result == null) {
+            throw new NullPointerException();
+        }
 
         return result;
     }
@@ -66,20 +56,32 @@ public class TransactionPool implements Subject {
         observer.update(allTransactions);
     }
 
-    public static List<Transaction> getSales(Product selectedProduct) {
-        List<Transaction> result = allTransactions.stream().
-                filter(transaction -> transaction.getProduct().equals(selectedProduct)).
-                filter(transaction -> transaction.getType().equals(TransactionType.REMOVAL)).
-                collect(Collectors.toList());
-        return result;
-    }
-
     public static List<Transaction> getAllTransactions() {
+        updatePool();
         return allTransactions;
     }
 
+    private static void updatePool() {
+        List<InventoryDataItem> items;
+        try {
+            TransactionPoolFileHandler fileHandler =
+                    new TransactionPoolFileHandler("assets/transactionPool.txt");
+            items = fileHandler.readFile();
+            allTransactions.clear();
+
+            for (InventoryDataItem item : items) {
+                allTransactions.add((Transaction) item);
+            }
+
+            int indexLastItem = allTransactions.size() - 1;
+            idCount = allTransactions.get(indexLastItem).getId();
+        } catch (IOException e) {
+            System.out.println("Inventory data could not be updated from file.");
+        }
+    }
+
     @Override
-    public void registerObserver(Observer observer) {
-        this.observer = observer;
+    public void registerObserver(Observer fileHandler) {
+        observer = fileHandler;
     }
 }

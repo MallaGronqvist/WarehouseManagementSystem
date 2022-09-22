@@ -1,4 +1,4 @@
-package poolDisplayer;
+package inventoryDataDisplay;
 
 import java.util.Scanner;
 

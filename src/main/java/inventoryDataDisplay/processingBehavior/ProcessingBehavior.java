@@ -1,4 +1,4 @@
-package poolDisplayer.processingBehavior;
+package inventoryDataDisplay.processingBehavior;
 
 import inventoryData.InventoryDataItem;
 

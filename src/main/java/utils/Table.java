@@ -1,3 +1,5 @@
+// This class is copied from Eduardo's lectures with some small modifications.
+
 package utils;
 
 import java.util.Arrays;

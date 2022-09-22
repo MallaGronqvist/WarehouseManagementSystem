@@ -1,4 +1,4 @@
-package poolDisplayer.processingBehavior;
+package inventoryDataDisplay.processingBehavior;
 
 import inventoryData.transaction.TransactionType;
 import inventoryData.InventoryDataItem;
@@ -29,23 +29,29 @@ public class RegisterSoldProduct implements ProcessingBehavior {
         DisplayHelper.navigateToUserMenu(receiptNumber);
 
         registerSoldItem(receiptNumber);
+
+        DisplayHelper.waitForEnter();
     }
 
     private void registerSoldItem(String receiptNumber) {
-        //  int quantity = updateProductQuantity((Product) product);
         int quantity = 1;
 
-        if (registerTransaction(selectedProduct, quantity, receiptNumber)) {
-            ProductPool.removeProductItems(selectedProduct, quantity);
-            DisplayHelper.displayText("Product's item quantity was updated.");
+        if(TransactionPool.notInTransactionPool(receiptNumber)){
+            try {
+                ProductPool.removeProductItems(selectedProduct, quantity);
+                registerTransaction(selectedProduct, quantity, receiptNumber);
+                DisplayHelper.displayText("Product's item quantity was updated.");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Last item cannot be removed!");
+            }
         } else {
             DisplayHelper.displayText("Invalid receipt number: " +
                     "The receipt number you entered has already been registered.");
         }
     }
 
-    private boolean registerTransaction(Product product, int quantity, String receiptNumber) {
-        return TransactionPool.addNewTransaction(
+    private void registerTransaction(Product product, int quantity, String receiptNumber) {
+        TransactionPool.addNewTransaction(
                 new Transaction(TransactionType.REMOVAL, receiptNumber, product, quantity));
     }
 
@@ -58,34 +64,4 @@ public class RegisterSoldProduct implements ProcessingBehavior {
 
         return (Product) result;
     }
-/*
-    private int updateProductQuantity(Product product) {
-        int quantity = requestQuantity();
-
-        try {
-            ProductPool.removeProductItems(product, quantity);
-            System.out.println("Product's item quantity was updated.");
-        } catch (IllegalArgumentException exception) {
-            System.out.println("Invalid quantity.");
-            quantity = updateProductQuantity(product);
-        }
-
-        return quantity;
-    }
-
-    private static int requestQuantity() {
-        int quantity = 0;
-        try {
-            System.out.print("Enter quantity of sold items:");
-            Scanner keyboard = new Scanner(System.in);
-            String input = keyboard.nextLine();
-            quantity = Integer.parseInt(input);
-        } catch (NumberFormatException exception) {
-            System.out.println("⚠️ Invalid input.");
-        }
-
-        return quantity;
-    }
-
- */
 }

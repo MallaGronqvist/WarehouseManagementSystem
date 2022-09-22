@@ -1,6 +1,7 @@
 package poolDisplayer.processingBehavior;
 
 import inventoryData.InventoryDataItem;
+import utils.DisplayHelper;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class DisplayInventoryDataItem implements ProcessingBehavior{
     }
 
     private void displayItem() {
+        DisplayHelper.displayHeader("Item details");
         List<String> headers = selectedItem.getHeaders();
         List<String> displayValues = selectedItem.getDisplayValues();
 

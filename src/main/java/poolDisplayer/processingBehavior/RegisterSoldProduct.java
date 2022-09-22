@@ -1,12 +1,13 @@
 package poolDisplayer.processingBehavior;
 
 import inventoryData.transaction.TransactionType;
-import menus.mainMenu.MainMenu;
 import inventoryData.InventoryDataItem;
 import inventoryData.product.Product;
 import inventoryData.product.ProductPool;
 import inventoryData.transaction.Transaction;
 import inventoryData.transaction.TransactionPool;
+import utils.DisplayHelper;
+
 
 import java.util.List;
 
@@ -23,11 +24,9 @@ public class RegisterSoldProduct implements ProcessingBehavior {
         int selectedId = Integer.parseInt(input);
         this.selectedProduct = getProduct(selectedId);
 
-        String receiptNumber = requestReceiptNumber();
-
-        if (receiptNumber.equalsIgnoreCase("x")) {
-            new MainMenu();
-        }
+        DisplayHelper.requestInput("Enter receipt number.");
+        String receiptNumber = readUserInput();
+        DisplayHelper.navigateToUserMenu(receiptNumber);
 
         registerSoldItem(receiptNumber);
     }
@@ -38,9 +37,9 @@ public class RegisterSoldProduct implements ProcessingBehavior {
 
         if (registerTransaction(selectedProduct, quantity, receiptNumber)) {
             ProductPool.removeProductItems(selectedProduct, quantity);
-            System.out.println("Product's item quantity was updated.");
+            DisplayHelper.displayText("Product's item quantity was updated.");
         } else {
-            System.out.println("Invalid receipt number: " +
+            DisplayHelper.displayText("Invalid receipt number: " +
                     "The receipt number you entered has already been registered.");
         }
     }
@@ -48,12 +47,6 @@ public class RegisterSoldProduct implements ProcessingBehavior {
     private boolean registerTransaction(Product product, int quantity, String receiptNumber) {
         return TransactionPool.addNewTransaction(
                 new Transaction(TransactionType.REMOVAL, receiptNumber, product, quantity));
-    }
-
-    private String requestReceiptNumber() {
-        System.out.print("Enter receipt number, or enter 'X' to exit: ");
-
-        return readUserInput();
     }
 
     private Product getProduct(int selectedId) throws NullPointerException {

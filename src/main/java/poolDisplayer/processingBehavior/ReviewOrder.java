@@ -6,6 +6,7 @@ import inventoryData.order.OrderPool;
 import inventoryData.InventoryDataItem;
 import inventoryData.product.Product;
 import inventoryData.product.ProductPool;
+import utils.DisplayHelper;
 
 import java.util.List;
 
@@ -42,62 +43,61 @@ public class ReviewOrder implements ProcessingBehavior {
     }
 
     private void markOrderAsArrived() {
-        if(!selectedOrder.isConfirmed()){
-            System.out.println("This order hasn't been confirmed yet!");
+        if (!selectedOrder.isConfirmed()){
+            DisplayHelper.displayText("This order hasn't been confirmed yet!");
         } else {
             Product product = selectedOrder.getProduct();
             int quantity = selectedOrder.getQuantity();
             ProductPool.addItemsToProduct(product, quantity);
             OrderPool.removeOrder(selectedOrder);
-            System.out.println("Order was removed from order list.");
-            System.out.println("Item quantity of ordered product was updated.");
+            DisplayHelper.displayText("Order was removed from order list.");
+            DisplayHelper.displayText("Item quantity of ordered product was updated.");
         }
     }
 
     private void confirmOrder() {
         if (selectedOrder.isConfirmed()){
-            System.out.println("Order is already confirmed.");
+            DisplayHelper.displayText("Order is already confirmed.");
         } else {
             selectedOrder.setConfirmed(true);
-            System.out.println("Order was confirmed.");
+            DisplayHelper.displayText("Order was confirmed.");
         }
     }
 
     private void rejectOrder() {
         if (selectedOrder.isConfirmed()){
-            System.out.println("A confirmed order cannot be rejected anymore.");
+            DisplayHelper.displayText("A confirmed order cannot be rejected anymore.");
         } else{
             OrderPool.removeOrder(selectedOrder);
-            System.out.println("Order was deleted from the order list.");
+            DisplayHelper.displayText("Order was deleted from the order list.");
         }
     }
 
     private void invalidOperation() {
-        System.out.println("Invalid input");
+        DisplayHelper.displayText("Invalid input");
         manageOrder();
     }
 
     private void displayOperationOptions() {
-        System.out.println("*** Available operations ***");
+        DisplayHelper.displayHeader("Available operations");
 
         if (!selectedOrder.isConfirmed()){
-            System.out.println("'C' - Confirm");
-            System.out.println("'R' - Reject");
+            DisplayHelper.displayText("'C' - Confirm");
+            DisplayHelper.displayText("'R' - Reject");
         }
 
         if (selectedOrder.isConfirmed()){
-            System.out.println("'A' - Arrived");
+            DisplayHelper.displayText("'A' - Arrived");
         }
-        System.out.println("'X' - Quit");
-        System.out.print("Enter choice: ");
+        DisplayHelper.displayText("'X' - Quit");
+        DisplayHelper.displayText("Enter choice: ");
     }
 
     private void displayOrderDetails(Order selectedOrder) {
-        System.out.println("*** Order details ***");
-        System.out.println("Product: " + selectedOrder.getProduct().getName());
-        System.out.println("Items in stock: " + selectedOrder.getProduct().getQuantity());
-        System.out.println("Ordered quantity: " + + selectedOrder.getQuantity());
-        System.out.println();
+        DisplayHelper.displayHeader("Order details");
+        DisplayHelper.displayText("Product: " + selectedOrder.getProduct().getName());
+        DisplayHelper.displayText("Items in stock: " + selectedOrder.getProduct().getQuantity());
+        DisplayHelper.displayText("Ordered quantity: " + + selectedOrder.getQuantity());
     }
 
     private Order getOrder(int selectedId) {

@@ -1,16 +1,16 @@
 package menus.menuCommons;
 
-import utils.ViewPrinter;
+import utils.DisplayHelper;
 
 import java.util.List;
 
 public class MenuView {
     public MenuView(String title, List<String> menuOptions) {
-        ViewPrinter.clearConsole();
+        DisplayHelper.clearConsole();
 
         displayTitle(title);
 
-        ViewPrinter.listOptions(menuOptions);
+        DisplayHelper.listOptions(menuOptions);
 
         requestUserInput();
     }

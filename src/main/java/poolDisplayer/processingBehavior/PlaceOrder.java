@@ -8,6 +8,7 @@ import inventoryData.order.Order;
 import inventoryData.order.OrderPool;
 import inventoryData.InventoryDataItem;
 import inventoryData.product.Product;
+import utils.DisplayHelper;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class PlaceOrder implements ProcessingBehavior {
     }
 
     private void prepareOrder() {
-        printHeader();
+        DisplayHelper.displayHeader("Create new order");
 
         boolean placeNewOrder = true;
 
@@ -47,15 +48,10 @@ public class PlaceOrder implements ProcessingBehavior {
         }
     }
 
-    private static void printHeader() {
-        System.out.println("***CREATE NEW ORDER***");
-        System.out.println();
-    }
-
     private static void displayOrderedQuantity(Product product) {
         int quantity = OrderPool.getOrderedQuantity(product);
-        System.out.println("This product has already been ordered.");
-        System.out.println("Ordered item quantity: " + quantity);
+        DisplayHelper.displayText("This product has already been ordered.");
+        DisplayHelper.displayText("Ordered item quantity: " + quantity);
     }
 
     private static void checkForNegativeQuantity(int quantity) throws IllegalArgumentException {
@@ -73,35 +69,38 @@ public class PlaceOrder implements ProcessingBehavior {
     }
 
     private boolean orderAnyway() {
-        System.out.println();
-        System.out.println("Would you like to place an order anyway?");
+        DisplayHelper.requestInput("Would you like to place an order anyway? " +
+                "Enter 'Y' for yes or 'N' for no. ");
         return answerIsYes();
     }
 
     private boolean answerIsYes() {
-        System.out.print("Enter 'Y' for yes or 'N' for no: ");
-        String answer = readUserInput();
+        String input = readUserInput();
+        DisplayHelper.navigateToUserMenu(input);
 
-        if (answer.equalsIgnoreCase("y")) {
+        if (input.equalsIgnoreCase("Y")) {
             return true;
-        } else if (answer.equalsIgnoreCase("n")) {
+        } else if (input.equalsIgnoreCase("N")) {
             return false;
         } else {
-            System.out.println("Invalid input.");
+            DisplayHelper.displayText("Invalid input.");
             return answerIsYes();
         }
     }
 
     private void createOrder(Product product, int quantity) {
-
         OrderPool.addNewOrder(new Order(product, quantity));
+
         TransactionPool.addNewTransaction(new Transaction(TransactionType.ORDER, "-", product, quantity));
     }
 
     private int requestQuantity() {
         int quantity;
-        System.out.println("Enter product quantity:");
+
+        DisplayHelper.requestInput("Enter product quantity.");
         String input = readUserInput();
+        DisplayHelper.navigateToUserMenu(input);
+
         try {
             quantity = Integer.parseInt(input);
 

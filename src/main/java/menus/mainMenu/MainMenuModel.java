@@ -5,6 +5,7 @@ import users.Admin;
 import users.Cashier;
 import users.Manager;
 import users.User;
+import utils.DisplayHelper;
 
 import java.util.List;
 
@@ -24,6 +25,8 @@ public class MainMenuModel extends MenuModel {
             case 4 -> exit();
             default -> throw new IndexOutOfBoundsException();
         }
+
+        DisplayHelper.setSignedInUser(signedInUser);
 
         signedInUser.sessionLoop();
     }

@@ -5,6 +5,7 @@ import inventoryData.order.Order;
 import inventoryData.InventoryDataItem;
 import inventoryData.product.Product;
 import inventoryData.transaction.Transaction;
+import utils.DisplayHelper;
 import utils.Table;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class PoolView {
 
         // sampleItem might be null if blanc space is mistakenly entered to empty data file
         } catch (IndexOutOfBoundsException | NullPointerException exception) {
-            System.out.println("No items were found.");
+            DisplayHelper.displayText("No items were found.");
             new MainMenu();
         }
 
@@ -33,23 +34,18 @@ public class PoolView {
 
     void requestInput() {
         if (sampleItem instanceof Product){
-            System.out.print("Enter selected product id, " +
-                    "or 'X' to exit: ");
+            DisplayHelper.requestInput("Enter selected product id.");
         } else if (sampleItem instanceof Transaction){
-            System.out.print("Enter selected transaction id, " +
-                    "or 'X' to exit: ");
+            DisplayHelper.requestInput("Enter selected transaction id.");
         } else if( sampleItem instanceof Order){
-            System.out.print("Enter selected order id," +
-                    "or 'X' to exit: ");
+            DisplayHelper.requestInput("Enter selected order id.");
         }
     }
 
     private void generateTable(List<? extends InventoryDataItem> data) {
-
             Table table = new Table(sampleItem.getHeaders(), generateBody(data), sampleItem.getColumnWidths());
 
             table.displayData();
-
     }
 
     private List<List<String>> generateBody(List<? extends InventoryDataItem> data) {
@@ -61,6 +57,6 @@ public class PoolView {
     }
 
     public void printInvalidOption() {
-        System.out.println("You entered an invalid option.");
+        DisplayHelper.displayText("You entered an invalid option.");
     }
 }

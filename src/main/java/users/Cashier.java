@@ -8,6 +8,7 @@ import inventoryData.transaction.Transaction;
 import inventoryData.transaction.TransactionPool;
 import poolDisplayer.PoolDisplayer;
 import poolDisplayer.processingBehavior.RegisterSoldProduct;
+import utils.DisplayHelper;
 
 import java.util.List;
 import java.util.Scanner;
@@ -40,26 +41,26 @@ public class Cashier extends User {
     }
 
     private void returnItem() {
-        System.out.println("*** Return item ***");
-        String receiptNumber = requestReceiptNumber();
+        DisplayHelper.displayHeader("Return item");
+        DisplayHelper.requestInput("Enter receipt number");
+        String receiptNumber = readUserInput();
 
-        if (receiptNumber.equalsIgnoreCase("X")){
-            new UserMenu(this);
-        }
+        DisplayHelper.navigateToUserMenu(receiptNumber);
 
         Transaction transaction = null;
         try {
             transaction = TransactionPool.getTransactionByReceipt(receiptNumber);
             processReturn(transaction, receiptNumber);
         } catch (NullPointerException e) {
-            System.out.println("No transaction was found with the given receipt number.");
+            DisplayHelper.displayText("No transaction was found with the given receipt number.");
             returnItem();
         }
     }
 
     private void processReturn(Transaction transaction, String receiptNumber) {
-        System.out.println("Item found with receiptNumber " + receiptNumber + ":");
-        System.out.println(transaction.getProduct().getName());
+        DisplayHelper.displayText("Item found with receiptNumber " + receiptNumber + ":");
+        DisplayHelper.displayText(transaction.getProduct().getName());
+
         if (returnConfirmed()){
             try {
                 TransactionPool.removeTransaction(transaction);
@@ -73,22 +74,16 @@ public class Cashier extends User {
     }
 
     private static boolean returnConfirmed() {
-        System.out.print("Enter 'C' to confirm return, or 'X' to quit: ");
-        String answer = readUserInput();
-        answer = answer.toUpperCase();
+        DisplayHelper.requestInput("Enter 'C' to confirm return.");
+        String input = readUserInput();
+        DisplayHelper.navigateToUserMenu(input);
+
+        String answer = input.toUpperCase();
 
         switch (answer){
             case "C" -> { return true; }
-            case "X" -> new MainMenu();
             default -> { return returnConfirmed();}
         }
-        // Extra return statement for the compiler.
-        return false;
-    }
-
-    private static String requestReceiptNumber() {
-        System.out.print("Enter receipt number or 'X' to quit: ");
-        return readUserInput();
     }
 
     private static String readUserInput() {

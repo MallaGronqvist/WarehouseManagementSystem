@@ -46,6 +46,4 @@ public class ManagerTests {
 
         assertEquals(0, OrderPool.getAllOrders().size());
     }
-
-
 }

@@ -1,4 +1,4 @@
-package fileHandlers;
+package fileOperations;
 
 import inventoryData.InventoryDataItem;
 
@@ -35,7 +35,7 @@ public abstract class FileHandler {
     }
 
     public List<InventoryDataItem> readFile() throws IOException{
-        List<InventoryDataItem> result = null;
+        List<InventoryDataItem> result;
         try (Stream<InventoryDataItem> items = Files.lines(filePath).map(this::parseLine)) {
             result = items.collect(Collectors.toList());
         } catch (IOException e) {

@@ -5,7 +5,7 @@ import menus.mainMenu.MainMenu;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static fileHandlers.FileSetUp.*;
+import static fileOperations.FileSetUp.*;
 
 public class Main {
     public static void main(String[] args) {

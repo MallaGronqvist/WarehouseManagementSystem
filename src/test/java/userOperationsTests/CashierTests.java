@@ -126,19 +126,4 @@ public class CashierTests {
 
         assertTrue(OrderPool.isAlreadyOrdered(product));
     }
-
-
-
-    /*
-    @Test
-    public void returnItemDeleteTransaction(){
-
-//       transactionPool.addNewTransaction(new Transaction(TransactionType.ORDERED, "-", product, quantity));
-        transactionPool.removeTransaction(transaction);
-
-        assertThrows(NullPointerException.class,
-                    () -> transactionPool.getTransactionByReceipt(transaction.getReceiptNumber()));
-    }
-
-     */
 }

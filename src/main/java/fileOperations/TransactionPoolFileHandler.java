@@ -1,4 +1,4 @@
-package fileHandlers;
+package fileOperations;
 
 import inventoryData.InventoryDataItem;
 import inventoryData.transaction.Transaction;

@@ -1,6 +1,6 @@
 package inventoryData.transaction;
 
-import fileHandlers.TransactionPoolFileHandler;
+import fileOperations.TransactionPoolFileHandler;
 import inventoryData.InventoryDataItem;
 import utils.Observer;
 import utils.Subject;

@@ -39,5 +39,4 @@ public class Admin extends User{
         new InventoryDataMenu(OrderPool.getAllOrders(), new DisplayInventoryDataItem());
     }
 
-
 }

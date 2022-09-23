@@ -25,15 +25,17 @@ public class OrderPoolFileHandler extends FileHandler implements Observer {
         try {
             final String DELIMIT = ";";
             String[] orderData = line.split(DELIMIT);
+
+            if (orderData.length == 0){ throw new NullPointerException(); }
+
             boolean confirmed = Boolean.parseBoolean(orderData[0]);
             int orderId = Integer.parseInt(orderData[1]);
             int productId = Integer.parseInt(orderData[2]);
             int quantity = Integer.parseInt(orderData[3]);
 
             return (new Order(confirmed, orderId, productId, quantity));
-        } catch (NumberFormatException | IndexOutOfBoundsException exception) {
-            System.out.println("Warning: An error occurred while reading orders from file.");
-            System.out.println("Some order data may be corrupt.");
+        } catch (NumberFormatException | NullPointerException| IndexOutOfBoundsException exception) {
+            System.out.println("Warning: Some order data may be corrupt or missing.");
         }
         // Extra return statement to keep the compiler happy.
         return null;

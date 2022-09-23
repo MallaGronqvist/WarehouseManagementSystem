@@ -1,7 +1,0 @@
-false;1;6;30
-false;2;6;5
-false;3;5;50
-false;4;6;20
-true;5;5;5
-false;6;6;10
-false;7;7;35

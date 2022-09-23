@@ -19,8 +19,10 @@ public class OrderPool implements Subject {
         for (InventoryDataItem item : orders) {
             allOrders.add((Order) item);
         }
-        int indexLastItem = allOrders.size() - 1;
-        idCount = allOrders.get(indexLastItem).getId();
+        if (orders.size() != 0) {
+            int indexLastItem = allOrders.size() - 1;
+            idCount = allOrders.get(indexLastItem).getId();
+        }
     }
 
     public OrderPool() {
@@ -81,8 +83,10 @@ public class OrderPool implements Subject {
             for (InventoryDataItem item : items) {
                 allOrders.add((Order) item);
             }
-            int indexLastItem = allOrders.size() - 1;
-            idCount = allOrders.get(indexLastItem).getId();
+            if (allOrders.size() != 0) {
+                int indexLastItem = allOrders.size() - 1;
+                idCount = allOrders.get(indexLastItem).getId();
+            }
         } catch (IOException e) {
             System.out.println("Inventory data could not be updated from file.");
         }

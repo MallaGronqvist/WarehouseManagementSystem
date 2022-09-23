@@ -35,13 +35,14 @@ public abstract class FileHandler {
     }
 
     public List<InventoryDataItem> readFile() throws IOException{
+
         List<InventoryDataItem> result;
         try (Stream<InventoryDataItem> items = Files.lines(filePath).map(this::parseLine)) {
             result = items.collect(Collectors.toList());
+            return result;
         } catch (IOException e) {
             throw new IOException();
         }
-        return result;
     }
 
     protected abstract InventoryDataItem parseLine(String line);

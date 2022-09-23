@@ -2,10 +2,10 @@ package users;
 
 import menus.mainMenu.MainMenu;
 import menus.userMenu.UserMenu;
-import inventoryDataDisplay.processingBehavior.PlaceOrder;
+import inventoryDataDisplay.dataProcessing.PlaceOrder;
 import inventoryDataDisplay.InventoryDataMenu;
 import inventoryData.product.ProductPool;
-import inventoryDataDisplay.processingBehavior.DisplayInventoryDataItem;
+import inventoryDataDisplay.dataProcessing.DisplayInventoryDataItem;
 
 import java.util.List;
 

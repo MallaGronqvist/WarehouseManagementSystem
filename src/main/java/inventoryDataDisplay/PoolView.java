@@ -22,9 +22,9 @@ public class PoolView {
 
         displayTable(data);
 
-        // sampleItem might be null if blanc space is mistakenly entered to empty data file
         } catch (IndexOutOfBoundsException | NullPointerException exception) {
             DisplayHelper.displayText("No items were found.");
+            DisplayHelper.waitForEnter();
             new MainMenu();
         }
     }

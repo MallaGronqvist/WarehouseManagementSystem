@@ -1,4 +1,4 @@
-package inventoryDataDisplay.processingBehavior;
+package inventoryDataDisplay.dataProcessing;
 
 import inventoryData.order.Order;
 import inventoryData.order.OrderPool;

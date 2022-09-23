@@ -1,4 +1,4 @@
-package inventoryDataDisplay.processingBehavior;
+package inventoryDataDisplay.dataProcessing;
 
 import inventoryData.transaction.TransactionType;
 import inventoryData.InventoryDataItem;
@@ -11,7 +11,7 @@ import utils.DisplayHelper;
 
 import java.util.List;
 
-public class RegisterSoldProduct implements ProcessingBehavior {
+public class RegisterSoldItem implements ProcessingBehavior {
     private List<? extends InventoryDataItem> products;
     private Product selectedProduct;
 
@@ -24,13 +24,26 @@ public class RegisterSoldProduct implements ProcessingBehavior {
         int selectedId = Integer.parseInt(input);
         this.selectedProduct = getProduct(selectedId);
 
-        DisplayHelper.requestInput("Enter receipt number.");
-        String receiptNumber = readUserInput();
-        DisplayHelper.navigateToUserMenu(receiptNumber);
+        String receiptNumber = requestReceiptNumber();
 
         registerSoldItem(receiptNumber);
 
         DisplayHelper.waitForEnter();
+    }
+
+    private String requestReceiptNumber() {
+        DisplayHelper.requestInput("Enter receipt number. 10 digits");
+        String receiptNumber = readUserInput();
+        DisplayHelper.navigateToUserMenu(receiptNumber);
+        if (!isValidReceiptNumber(receiptNumber)){
+            DisplayHelper.displayText("Invalid receipt number.");
+            receiptNumber = requestReceiptNumber();
+        }
+        return receiptNumber;
+    }
+
+    private boolean isValidReceiptNumber(String receiptNumber) {
+        return (receiptNumber.length() == 10 && receiptNumber.matches("[0-9]+"));
     }
 
     private void registerSoldItem(String receiptNumber) {

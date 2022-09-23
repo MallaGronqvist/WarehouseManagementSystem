@@ -24,14 +24,16 @@ public class ProductPoolFileHandler extends FileHandler implements Observer {
         try {
             final String DELIMIT = ";";
             String[] productData = line.split(DELIMIT);
+
+            if (productData.length == 0) { throw new NullPointerException(); }
+
             int id = Integer.parseInt(productData[0]);
             String name = productData[1];
             int quantity = Integer.parseInt(productData[2]);
             String shelf = productData[3];
             return (new Product(id, name, quantity, shelf));
         } catch (NumberFormatException | IndexOutOfBoundsException exception) {
-            System.out.println("Warning: An error occurred while reading product file.");
-            System.out.println("Some product data may be corrupt.");
+            System.out.println("Warning: Some product data may be corrupt or missing.");
         }
         // Extra return statement to keep the compiler happy.
         return null;

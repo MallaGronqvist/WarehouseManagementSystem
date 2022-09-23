@@ -19,8 +19,10 @@ public class TransactionPool implements Subject {
         for (InventoryDataItem item : transactions) {
             allTransactions.add((Transaction) item);
         }
-        int indexLastItem = allTransactions.size() - 1;
-        idCount = allTransactions.get(indexLastItem).getId();
+        if (allTransactions.size() != 0) {
+            int indexLastItem = allTransactions.size() - 1;
+            idCount = allTransactions.get(indexLastItem).getId();
+        }
     }
 
     public static boolean notInTransactionPool(String receiptNumber) {
@@ -72,9 +74,10 @@ public class TransactionPool implements Subject {
             for (InventoryDataItem item : items) {
                 allTransactions.add((Transaction) item);
             }
-
-            int indexLastItem = allTransactions.size() - 1;
-            idCount = allTransactions.get(indexLastItem).getId();
+            if (allTransactions.size() != 0) {
+                int indexLastItem = allTransactions.size() - 1;
+                idCount = allTransactions.get(indexLastItem).getId();
+            }
         } catch (IOException e) {
             System.out.println("Inventory data could not be updated from file.");
         }

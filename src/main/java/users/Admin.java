@@ -5,7 +5,7 @@ import inventoryData.order.OrderPool;
 import inventoryData.transaction.TransactionPool;
 import menus.userMenu.UserMenu;
 import inventoryDataDisplay.InventoryDataMenu;
-import inventoryDataDisplay.processingBehavior.DisplayInventoryDataItem;
+import inventoryDataDisplay.dataProcessing.DisplayInventoryDataItem;
 
 import java.util.List;
 

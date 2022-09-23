@@ -25,6 +25,9 @@ public class TransactionPoolFileHandler extends FileHandler implements Observer 
         try {
             final String DELIMIT = ";";
             String[] transactionData = line.split(DELIMIT);
+
+            if (transactionData.length == 0) { throw new NullPointerException();}
+
             TransactionType type = TransactionType.valueOf(transactionData[0]);
             int transactionId = Integer.parseInt(transactionData[1]);
             int productId = Integer.parseInt(transactionData[2]);
@@ -32,8 +35,7 @@ public class TransactionPoolFileHandler extends FileHandler implements Observer 
             String receiptNumber = transactionData[4];
             return (new Transaction(type, transactionId, productId, quantity, receiptNumber));
         } catch (NumberFormatException | IndexOutOfBoundsException exception) {
-            System.out.println("Warning: An error occurred while reading transaction file.");
-            System.out.println("Some transaction data may be corrupt.");
+            System.out.println("Warning: Some transaction data may be corrupt.");
         }
         // Extra return statement to keep the compiler happy.
         return null;

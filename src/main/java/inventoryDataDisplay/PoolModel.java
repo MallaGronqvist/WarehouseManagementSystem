@@ -1,7 +1,7 @@
 package inventoryDataDisplay;
 
 import menus.mainMenu.MainMenu;
-import inventoryDataDisplay.processingBehavior.ProcessingBehavior;
+import inventoryDataDisplay.dataProcessing.ProcessingBehavior;
 import inventoryData.InventoryDataItem;
 import utils.DisplayHelper;
 

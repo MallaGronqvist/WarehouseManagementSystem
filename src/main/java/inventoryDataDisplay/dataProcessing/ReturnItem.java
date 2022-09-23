@@ -16,8 +16,8 @@ public class ReturnItem {
         returnItem();
 
     }
-    private void returnItem() {
 
+    private void returnItem() {
         DisplayHelper.requestInput("Enter receipt number.");
         String receiptNumber = readUserInput();
 
@@ -37,25 +37,6 @@ public class ReturnItem {
         }
     }
 
-    private void processReturn(Transaction transaction, String receiptNumber) {
-        DisplayHelper.displayText("Item found with receiptNumber " + receiptNumber + ":");
-        DisplayHelper.displayText(transaction.getProduct().getName());
-
-        if (returnConfirmed()) {
-            try {
-                TransactionPool.removeTransaction(transaction);
-                Product product = transaction.getProduct();
-                ProductPool.addItemsToProduct(product, transaction.getQuantity());
-
-                DisplayHelper.displayText("Item was successfully returned.");
-                DisplayHelper.waitForEnter();
-            } catch (NullPointerException e) {
-                DisplayHelper.displayText("Item has already been returned by another cashier.");
-                DisplayHelper.waitForEnter();
-            }
-        }
-    }
-
     private static boolean returnConfirmed() {
         DisplayHelper.requestInput("Enter 'C' to confirm return.");
         String input = readUserInput();
@@ -71,5 +52,24 @@ public class ReturnItem {
     private static String readUserInput() {
         Scanner keyboard = new Scanner(System.in);
         return keyboard.nextLine();
+    }
+
+    private void processReturn(Transaction transaction, String receiptNumber) {
+        DisplayHelper.displayText("Item found with receiptNumber " + receiptNumber + ":");
+        DisplayHelper.displayText(transaction.getProduct().getName());
+
+        if (returnConfirmed()) {
+            try {
+                TransactionPool.removeTransaction(transaction);
+                Product product = transaction.getProduct();
+                ProductPool.addItems(product, transaction.getQuantity());
+
+                DisplayHelper.displayText("Item was successfully returned.");
+                DisplayHelper.waitForEnter();
+            } catch (NullPointerException e) {
+                DisplayHelper.displayText("Item has already been returned by another cashier.");
+                DisplayHelper.waitForEnter();
+            }
+        }
     }
 }

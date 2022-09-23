@@ -1,8 +1,8 @@
 package inventoryDataDisplay.dataProcessing;
 
+import inventoryData.InventoryDataItem;
 import inventoryData.order.Order;
 import inventoryData.order.OrderPool;
-import inventoryData.InventoryDataItem;
 import inventoryData.product.Product;
 import inventoryData.product.ProductPool;
 import utils.DisplayHelper;
@@ -12,6 +12,7 @@ import java.util.List;
 public class ReviewOrder implements ProcessingBehavior {
     private List<? extends InventoryDataItem> orders;
     private Order selectedOrder;
+
     @Override
     public void processData(String input, List<? extends InventoryDataItem> data)
             throws NumberFormatException, NullPointerException {
@@ -31,23 +32,22 @@ public class ReviewOrder implements ProcessingBehavior {
         String answer = readUserInput();
         answer = answer.toUpperCase();
 
-        switch (answer){
+        switch (answer) {
             case "A" -> markOrderAsArrived();
             case "C" -> confirmOrder();
             case "R" -> rejectOrder();
             case "X" -> DisplayHelper.navigateToUserMenu(answer);
             default -> invalidOperation();
         }
-
     }
 
     private void markOrderAsArrived() {
-        if (!selectedOrder.isConfirmed()){
+        if (!selectedOrder.isConfirmed()) {
             DisplayHelper.displayText("This order hasn't been confirmed yet!");
         } else {
             Product product = selectedOrder.getProduct();
             int quantity = selectedOrder.getQuantity();
-            ProductPool.addItemsToProduct(product, quantity);
+            ProductPool.addItems(product, quantity);
             OrderPool.removeOrder(selectedOrder);
             DisplayHelper.displayText("Order was removed from order list.");
             DisplayHelper.displayText("Item quantity of ordered product was updated.");
@@ -55,7 +55,7 @@ public class ReviewOrder implements ProcessingBehavior {
     }
 
     private void confirmOrder() {
-        if (selectedOrder.isConfirmed()){
+        if (selectedOrder.isConfirmed()) {
             DisplayHelper.displayText("Order is already confirmed.");
         } else {
             OrderPool.confirmOrder(selectedOrder);
@@ -64,9 +64,9 @@ public class ReviewOrder implements ProcessingBehavior {
     }
 
     private void rejectOrder() {
-        if (selectedOrder.isConfirmed()){
+        if (selectedOrder.isConfirmed()) {
             DisplayHelper.displayText("A confirmed order cannot be rejected anymore.");
-        } else{
+        } else {
             OrderPool.removeOrder(selectedOrder);
             DisplayHelper.displayText("Order was deleted from the order list.");
         }
@@ -80,12 +80,12 @@ public class ReviewOrder implements ProcessingBehavior {
     private void displayOperationOptions() {
         DisplayHelper.displayHeader("Available operations");
 
-        if (!selectedOrder.isConfirmed()){
+        if (!selectedOrder.isConfirmed()) {
             DisplayHelper.displayText("'C' - Confirm");
             DisplayHelper.displayText("'R' - Reject");
         }
 
-        if (selectedOrder.isConfirmed()){
+        if (selectedOrder.isConfirmed()) {
             DisplayHelper.displayText("'A' - Arrived");
         }
         DisplayHelper.displayText("'X' - Go Back");
@@ -106,7 +106,9 @@ public class ReviewOrder implements ProcessingBehavior {
                 .filter(order -> order.getId() == selectedId)
                 .findAny().orElse(null);
 
-        if (result == null) { throw new NullPointerException(); }
+        if (result == null) {
+            throw new NullPointerException();
+        }
 
         return (Order) result;
     }

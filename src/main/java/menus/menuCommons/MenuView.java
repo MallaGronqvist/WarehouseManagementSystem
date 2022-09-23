@@ -8,16 +8,11 @@ public class MenuView {
     public MenuView(String title, List<String> menuOptions) {
         DisplayHelper.clearConsole();
 
-        displayTitle(title);
+        DisplayHelper.displayHeader(title);
 
         DisplayHelper.listOptions(menuOptions);
 
         requestUserInput();
-    }
-
-    private static void displayTitle(String title) {
-        System.out.println(title);
-        System.out.println();
     }
 
     public void requestUserInput() {
@@ -25,6 +20,6 @@ public class MenuView {
     }
 
     public void printInvalidOption() {
-        System.out.println("You entered an invalid option.");
+        DisplayHelper.displayText("You entered an invalid option.");
     }
 }

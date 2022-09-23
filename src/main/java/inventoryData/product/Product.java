@@ -5,16 +5,12 @@ import inventoryData.InventoryDataItem;
 import java.util.List;
 
 public class Product extends InventoryDataItem {
-    String shelf;
     private final int id;
     private final String name;
-    private int quantity;
-
-    // No price is registered here since that's in the separate payment system,
-    // and we don't want to have to change prices in two places.
-    // The list of headers is used when printing products.
     private final List<String> headers = List.of("Id", "Product", "Quantity", "Shelf");
     private final List<Integer> columnWidths = List.of(5, 20, 10, 10);
+    private final String shelf;
+    private int quantity;
 
     public Product(int id, String name, int quantity, String shelf) {
         this.id = id;

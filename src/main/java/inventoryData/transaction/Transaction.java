@@ -4,20 +4,16 @@ import inventoryData.InventoryDataItem;
 import inventoryData.product.Product;
 import inventoryData.product.ProductPool;
 
-import java.util.Date;
 import java.util.List;
 
 public class Transaction extends InventoryDataItem {
-
-    int id;
-    int quantity;
+    private int id;
     private final String receiptNumber;
     private final Product product;
-    private TransactionType type;
-    private Date date;
-
     private final List<String> headers = List.of("Id", "Transaction Type", "Product", "Quantity", "Receipt number");
     private final List<Integer> columnWidths = List.of(5, 20, 20, 10, 15);
+    private final int quantity;
+    private final TransactionType type;
 
 
     // Constructor for new transactions.
@@ -33,7 +29,7 @@ public class Transaction extends InventoryDataItem {
         this.type = type;
         this.id = transactionId;
         Product result = ProductPool.getProductById(productId);
-        if (result == null){
+        if (result == null) {
             this.product = new Product(productId, "Product not in sale anymore", 0, "X");
         } else {
             this.product = result;
@@ -57,8 +53,6 @@ public class Transaction extends InventoryDataItem {
         return columnWidths;
     }
 
-
-
     @Override
     public String getSavable() {
         final String DELIMIT = ";";
@@ -69,6 +63,10 @@ public class Transaction extends InventoryDataItem {
     @Override
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getReceiptNumber() {
@@ -85,9 +83,5 @@ public class Transaction extends InventoryDataItem {
 
     public TransactionType getType() {
         return type;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

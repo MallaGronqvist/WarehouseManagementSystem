@@ -1,17 +1,16 @@
 package users;
 
+import inventoryData.product.ProductPool;
+import inventoryDataDisplay.InventoryDataMenu;
+import inventoryDataDisplay.dataProcessing.DisplayInventoryDataItem;
+import inventoryDataDisplay.dataProcessing.PlaceOrder;
 import menus.mainMenu.MainMenu;
 import menus.userMenu.UserMenu;
-import inventoryDataDisplay.dataProcessing.PlaceOrder;
-import inventoryDataDisplay.InventoryDataMenu;
-import inventoryData.product.ProductPool;
-import inventoryDataDisplay.dataProcessing.DisplayInventoryDataItem;
 
 import java.util.List;
 
 public abstract class User {
-
-    List<String> actions;
+    protected List<String> actions;
 
     public List<String> getActions() {
         return actions;
@@ -24,15 +23,14 @@ public abstract class User {
     public abstract void performAction(int selectedOption) throws IndexOutOfBoundsException;
 
     protected void viewProductPool() {
-
         new InventoryDataMenu(ProductPool.getAllProducts(), new DisplayInventoryDataItem());
     }
 
-    protected void viewSoonOutOfStockProducts(){
+    protected void viewSoonOutOfStockProducts() {
         new InventoryDataMenu(ProductPool.getSoonOutOfStockProducts(), new PlaceOrder());
     }
 
-    protected void navigateToMainMenu(){
+    protected void navigateToMainMenu() {
         new MainMenu();
     }
 }

@@ -1,10 +1,10 @@
 package inventoryData.order;
 
+import fileOperations.Observer;
 import fileOperations.OrderPoolFileHandler;
 import inventoryData.InventoryDataItem;
+import inventoryData.Subject;
 import inventoryData.product.Product;
-import utils.Observer;
-import utils.Subject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,8 +25,7 @@ public class OrderPool implements Subject {
         }
     }
 
-    public OrderPool() {
-    }
+    public OrderPool() {}
 
     public static List<Order> getAllOrders() {
         updatePool();

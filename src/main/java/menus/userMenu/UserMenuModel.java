@@ -4,7 +4,7 @@ import menus.menuCommons.MenuModel;
 import users.User;
 
 public class UserMenuModel extends MenuModel {
-    private User user;
+    private final User user;
 
     public UserMenuModel(User user) {
         this.user = user;

@@ -1,6 +1,7 @@
 package fileOperations;
 
 import inventoryData.InventoryDataItem;
+import utils.DisplayHelper;
 
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -18,7 +19,6 @@ public abstract class FileHandler {
     private final Path filePath;
 
     public FileHandler(String filePath) throws FileNotFoundException {
-
         this.filePath = Path.of(filePath);
 
         checkFile();
@@ -34,8 +34,7 @@ public abstract class FileHandler {
         return filePath.toString();
     }
 
-    public List<InventoryDataItem> readFile() throws IOException{
-
+    public List<InventoryDataItem> readFile() throws IOException {
         List<InventoryDataItem> result;
         try (Stream<InventoryDataItem> items = Files.lines(filePath).map(this::parseLine)) {
             result = items.collect(Collectors.toList());
@@ -48,7 +47,6 @@ public abstract class FileHandler {
     protected abstract InventoryDataItem parseLine(String line);
 
     public void saveToFile(List<? extends InventoryDataItem> items) {
-
         Thread thread = new Thread(() -> {
             try {
                 writeToFile(items);
@@ -61,14 +59,14 @@ public abstract class FileHandler {
     }
 
     private synchronized void writeToFile(List<? extends InventoryDataItem> items)
-            throws InterruptedException{
+            throws InterruptedException {
         try (BufferedWriter writer = Files.newBufferedWriter(filePath, StandardCharsets.UTF_8)) {
             for (InventoryDataItem item : items) {
                 writer.write(item.getSavable());
                 writer.write(System.getProperty("line.separator"));
             }
         } catch (IOException exception) {
-            System.out.println("Couldn't save to file.");
+            DisplayHelper.displayText("Couldn't save to file.");
         }
     }
 }

@@ -3,8 +3,8 @@ package inventoryDataDisplay;
 import java.util.Scanner;
 
 public class PoolController {
-    private PoolModel model;
-    private PoolView view;
+    private final PoolModel model;
+    private final PoolView view;
 
     public PoolController(PoolModel model, PoolView view) {
         this.model = model;
@@ -25,6 +25,4 @@ public class PoolController {
             readInput();
         }
     }
-
-
 }

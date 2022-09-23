@@ -1,7 +1,7 @@
 package inventoryDataDisplay;
 
-import inventoryDataDisplay.dataProcessing.ProcessingBehavior;
 import inventoryData.InventoryDataItem;
+import inventoryDataDisplay.dataProcessing.ProcessingBehavior;
 
 import java.util.List;
 

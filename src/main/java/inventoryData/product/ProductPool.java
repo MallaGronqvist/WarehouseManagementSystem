@@ -1,9 +1,9 @@
 package inventoryData.product;
 
+import fileOperations.Observer;
 import fileOperations.ProductPoolFileHandler;
 import inventoryData.InventoryDataItem;
-import utils.Observer;
-import utils.Subject;
+import inventoryData.Subject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ProductPool implements Subject {
-
     private static List<Product> allProducts = new ArrayList<>();
     private static Observer observer;
 
@@ -29,34 +28,32 @@ public class ProductPool implements Subject {
         return allProducts;
     }
 
-    public static void removeProductItems(Product product, int quantity) throws IllegalArgumentException {
+    public static void removeItems(Product product, int quantity) throws IllegalArgumentException {
         product.removeItems(quantity);
 
         observer.update(allProducts);
     }
 
     public static List<Product> getSoonOutOfStockProducts() {
-        List<Product> soonOutOfStock = allProducts.stream()
+
+        return allProducts.stream()
                 .filter(item -> item.getQuantity() < 6)
                 .collect(Collectors.toList());
-
-        return soonOutOfStock;
     }
 
-    public static void addItemsToProduct(Product product, int quantity) {
+    public static void addItems(Product product, int quantity) {
         product.addItems(quantity);
         observer.update(allProducts);
     }
 
     public static Product getProductById(int productId) {
-        Product result = allProducts.stream()
+
+        return allProducts.stream()
                 .filter(product -> product.getId() == productId)
                 .findAny().orElse(null);
-
-        return result;
     }
 
-    private static void updatePool(){
+    private static void updatePool() {
         List<InventoryDataItem> items;
         try {
             ProductPoolFileHandler fileHandler = new ProductPoolFileHandler("assets/productPool.txt");

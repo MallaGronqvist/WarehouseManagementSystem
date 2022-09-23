@@ -1,17 +1,12 @@
 package users;
 
-import inventoryData.product.Product;
 import inventoryData.product.ProductPool;
-import inventoryData.transaction.Transaction;
-import inventoryData.transaction.TransactionPool;
-import inventoryDataDisplay.dataProcessing.ReturnItem;
-import menus.userMenu.UserMenu;
 import inventoryDataDisplay.InventoryDataMenu;
 import inventoryDataDisplay.dataProcessing.RegisterSoldItem;
-import utils.DisplayHelper;
+import inventoryDataDisplay.dataProcessing.ReturnItem;
+import menus.userMenu.UserMenu;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Cashier extends User {
 

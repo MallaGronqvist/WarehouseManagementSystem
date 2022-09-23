@@ -10,7 +10,7 @@ import inventoryData.transaction.TransactionPool;
 import inventoryData.transaction.TransactionType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import utils.Observer;
+import fileOperations.Observer;
 
 import java.util.ArrayList;
 import java.util.List;

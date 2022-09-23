@@ -1,13 +1,13 @@
 package inventoryDataDisplay.dataProcessing;
 
+import inventoryData.InventoryDataItem;
+import inventoryData.order.Order;
+import inventoryData.order.OrderPool;
+import inventoryData.product.Product;
 import inventoryData.transaction.Transaction;
 import inventoryData.transaction.TransactionPool;
 import inventoryData.transaction.TransactionType;
 import menus.mainMenu.MainMenu;
-import inventoryData.order.Order;
-import inventoryData.order.OrderPool;
-import inventoryData.InventoryDataItem;
-import inventoryData.product.Product;
 import utils.DisplayHelper;
 
 import java.util.List;
@@ -27,6 +27,18 @@ public class PlaceOrder implements ProcessingBehavior {
         prepareOrder();
 
         DisplayHelper.waitForEnter();
+    }
+
+    private static void displayOrderedQuantity(Product product) {
+        int quantity = OrderPool.getOrderedQuantity(product);
+        DisplayHelper.displayText("This product has already been ordered.");
+        DisplayHelper.displayText("Ordered item quantity: " + quantity);
+    }
+
+    private static void checkForNegativeQuantity(int quantity) throws IllegalArgumentException {
+        if (quantity < 1) {
+            throw new IllegalArgumentException();
+        }
     }
 
     private void prepareOrder() {
@@ -52,22 +64,14 @@ public class PlaceOrder implements ProcessingBehavior {
         }
     }
 
-    private static void displayOrderedQuantity(Product product) {
-        int quantity = OrderPool.getOrderedQuantity(product);
-        DisplayHelper.displayText("This product has already been ordered.");
-        DisplayHelper.displayText("Ordered item quantity: " + quantity);
-    }
-
-    private static void checkForNegativeQuantity(int quantity) throws IllegalArgumentException {
-        if (quantity < 1) { throw new IllegalArgumentException(); }
-    }
-
     private Product getProduct(int selectedId) throws NullPointerException {
         InventoryDataItem result = products.stream()
                 .filter(product -> product.getId() == selectedId)
                 .findAny().orElse(null);
 
-        if (result == null) { throw new NullPointerException(); }
+        if (result == null) {
+            throw new NullPointerException();
+        }
 
         return (Product) result;
     }

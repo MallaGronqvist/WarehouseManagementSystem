@@ -1,13 +1,12 @@
 package inventoryDataDisplay.dataProcessing;
 
-import inventoryData.transaction.TransactionType;
 import inventoryData.InventoryDataItem;
 import inventoryData.product.Product;
 import inventoryData.product.ProductPool;
 import inventoryData.transaction.Transaction;
 import inventoryData.transaction.TransactionPool;
+import inventoryData.transaction.TransactionType;
 import utils.DisplayHelper;
-
 
 import java.util.List;
 
@@ -35,7 +34,7 @@ public class RegisterSoldItem implements ProcessingBehavior {
         DisplayHelper.requestInput("Enter receipt number. 10 digits");
         String receiptNumber = readUserInput();
         DisplayHelper.navigateToUserMenu(receiptNumber);
-        if (!isValidReceiptNumber(receiptNumber)){
+        if (!isValidReceiptNumber(receiptNumber)) {
             DisplayHelper.displayText("Invalid receipt number.");
             receiptNumber = requestReceiptNumber();
         }
@@ -49,9 +48,9 @@ public class RegisterSoldItem implements ProcessingBehavior {
     private void registerSoldItem(String receiptNumber) {
         int quantity = 1;
 
-        if(TransactionPool.notInTransactionPool(receiptNumber)){
+        if (TransactionPool.notRegistered(receiptNumber)) {
             try {
-                ProductPool.removeProductItems(selectedProduct, quantity);
+                ProductPool.removeItems(selectedProduct, quantity);
                 registerTransaction(selectedProduct, quantity, receiptNumber);
                 DisplayHelper.displayText("Product's item quantity was updated.");
             } catch (IllegalArgumentException e) {
@@ -73,7 +72,9 @@ public class RegisterSoldItem implements ProcessingBehavior {
                 .filter(product -> product.getId() == selectedId)
                 .findAny().orElse(null);
 
-        if (result == null) { throw new NullPointerException(); }
+        if (result == null) {
+            throw new NullPointerException();
+        }
 
         return (Product) result;
     }

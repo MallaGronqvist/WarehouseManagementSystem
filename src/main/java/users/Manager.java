@@ -1,13 +1,13 @@
 package users;
 
-import menus.userMenu.UserMenu;
 import inventoryData.order.OrderPool;
 import inventoryDataDisplay.InventoryDataMenu;
 import inventoryDataDisplay.dataProcessing.ReviewOrder;
+import menus.userMenu.UserMenu;
 
 import java.util.List;
 
-public class Manager extends User{
+public class Manager extends User {
 
     public Manager() {
         super.actions = List.of(

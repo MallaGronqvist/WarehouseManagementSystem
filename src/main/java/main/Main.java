@@ -1,6 +1,7 @@
 package main;
 
 import menus.mainMenu.MainMenu;
+import utils.DisplayHelper;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,14 +26,14 @@ public class Main {
     }
 
     private static void displayFileNotFoundError(FileNotFoundException fileNotFoundException) {
-        System.out.println("Inventory data couldn't be loaded properly from file.");
-        System.out.println("Following file is missing: " + fileNotFoundException);
-        System.out.println("Program must exit.");
+        DisplayHelper.displayText("Inventory data couldn't be loaded properly from file.");
+        DisplayHelper.displayText("Following file is missing: " + fileNotFoundException);
+        DisplayHelper.displayText("Program must exit.");
     }
 
     private static void displayUnexpectedFileError() {
-        System.out.println("An unexpected error occurred while loading inventory data from file.");
-        System.out.println("Program must exit.");
+        DisplayHelper.displayText("An unexpected error occurred while loading inventory data from file.");
+        DisplayHelper.displayText("Program must exit.");
     }
 
     private static void exit() {

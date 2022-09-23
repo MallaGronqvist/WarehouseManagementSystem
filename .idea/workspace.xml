@@ -10,29 +10,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Did some refactoring.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/ReturnItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/orderPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/orderPool.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/productPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/productPool.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/transactionPool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/transactionPool.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fileOperations/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileOperations/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fileOperations/OrderPoolFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileOperations/OrderPoolFileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fileOperations/ProductPoolFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileOperations/ProductPoolFileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fileOperations/TransactionPoolFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileOperations/TransactionPoolFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/order/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/order/OrderPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/order/OrderPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/product/ProductPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/product/ProductPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/TransactionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/transaction/TransactionPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/InventoryDataMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/InventoryDataMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/PoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/PoolController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/PoolModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/PoolModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/PoolView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/PoolView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/processingBehavior/DisplayInventoryDataItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/DisplayInventoryDataItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/processingBehavior/PlaceOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/PlaceOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/processingBehavior/ProcessingBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/ProcessingBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/processingBehavior/RegisterSoldProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/RegisterSoldItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/processingBehavior/ReviewOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/ReviewOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/DisplayInventoryDataItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/DisplayInventoryDataItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/PlaceOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/PlaceOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/ProcessingBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/ProcessingBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/RegisterSoldItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/RegisterSoldItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/ReturnItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/ReturnItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/ReviewOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryDataDisplay/dataProcessing/ReviewOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/mainMenu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/mainMenu/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/menuCommons/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/userMenu/UserMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/userMenu/UserMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menus/userMenu/UserMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menus/userMenu/UserMenuModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/users/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Cashier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/users/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DisplayHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DisplayHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileOperations/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inventoryData/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/userOperationsTests/CashierTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userOperationsTests/CashierTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/userOperationsTests/ManagerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userOperationsTests/ManagerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +273,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663875835519</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Did some refactoring.">
+      <created>1663925871706</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663925871706</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Did some refactoring.">
+      <created>1663925920157</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1663925920157</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,21 +314,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/inventoryDataDisplay/PoolView.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fileOperations/FileHandler.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/inventoryDataDisplay/PoolModel.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="23" />

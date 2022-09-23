@@ -7,12 +7,12 @@ import inventoryData.product.ProductPool;
 import java.util.List;
 
 public class Order extends InventoryDataItem {
-    boolean confirmed;
     private int id;
-    private Product product;
     private final int quantity;
     private final List<String> headers = List.of("Order Id", "Product", "Ordered quantity", "Status");
     private final List<Integer> columnWidths = List.of(10, 20, 16, 20);
+    private boolean confirmed;
+    private Product product;
 
     // Constructor used when creating new orders.
     public Order(Product product, int quantity) {
@@ -54,7 +54,7 @@ public class Order extends InventoryDataItem {
     }
 
     private String getStatus() {
-        String status = "";
+        String status;
         if (confirmed) {
             status = "Confirmed";
         } else {
@@ -66,7 +66,7 @@ public class Order extends InventoryDataItem {
     @Override
     public String getSavable() {
         final String DELIMIT = ";";
-        return String.valueOf(confirmed) + DELIMIT
+        return confirmed + DELIMIT
                 + id + DELIMIT + product.getId()
                 + DELIMIT + quantity;
     }

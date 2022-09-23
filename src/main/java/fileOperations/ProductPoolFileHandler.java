@@ -1,16 +1,15 @@
 package fileOperations;
 
 import inventoryData.InventoryDataItem;
+import inventoryData.Subject;
 import inventoryData.product.Product;
-import utils.Observer;
-import utils.Subject;
 
 import java.io.IOException;
 import java.util.List;
 
 public class ProductPoolFileHandler extends FileHandler implements Observer {
-
     private Subject subject;
+
     public ProductPoolFileHandler(String filePath) throws IOException {
         super(filePath);
     }
@@ -25,7 +24,9 @@ public class ProductPoolFileHandler extends FileHandler implements Observer {
             final String DELIMIT = ";";
             String[] productData = line.split(DELIMIT);
 
-            if (productData.length == 0) { throw new NullPointerException(); }
+            if (productData.length == 0) {
+                throw new NullPointerException();
+            }
 
             int id = Integer.parseInt(productData[0]);
             String name = productData[1];

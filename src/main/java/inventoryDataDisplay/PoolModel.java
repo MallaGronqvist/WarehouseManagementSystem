@@ -1,16 +1,14 @@
 package inventoryDataDisplay;
 
-import menus.mainMenu.MainMenu;
-import inventoryDataDisplay.dataProcessing.ProcessingBehavior;
 import inventoryData.InventoryDataItem;
+import inventoryDataDisplay.dataProcessing.ProcessingBehavior;
 import utils.DisplayHelper;
 
 import java.util.List;
 
 public class PoolModel {
-
-    private List<? extends InventoryDataItem> data;
-    private ProcessingBehavior processor;
+    private final List<? extends InventoryDataItem> data;
+    private final ProcessingBehavior processor;
 
     public PoolModel(List<? extends InventoryDataItem> data, ProcessingBehavior processor) {
 
@@ -22,14 +20,10 @@ public class PoolModel {
         return data;
     }
 
-    public void processOption(String input) throws NumberFormatException, NullPointerException{
+    public void processOption(String input) throws NumberFormatException, NullPointerException {
 
         DisplayHelper.navigateToUserMenu(input);
 
         processor.processData(input, data);
-    }
-
-    private void navigateToMainMenu() {
-        new MainMenu();
     }
 }

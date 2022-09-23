@@ -5,7 +5,7 @@ import utils.DisplayHelper;
 
 import java.util.List;
 
-public class DisplayInventoryDataItem implements ProcessingBehavior{
+public class DisplayInventoryDataItem implements ProcessingBehavior {
     private List<? extends InventoryDataItem> items;
     private InventoryDataItem selectedItem;
 
@@ -27,18 +27,19 @@ public class DisplayInventoryDataItem implements ProcessingBehavior{
         List<String> displayValues = selectedItem.getDisplayValues();
 
         for (int index = 0; index < headers.size(); index++) {
-            System.out.print(headers.get(index) + ": ");
-            System.out.println( displayValues.get(index));
+            DisplayHelper.displayText(headers.get(index) + ": " + displayValues.get(index));
+        //    DisplayHelper.displayText(displayValues.get(index));
         }
     }
-
 
     private InventoryDataItem getItem(int selectedId) throws NullPointerException {
         InventoryDataItem result = items.stream()
                 .filter(item -> item.getId() == selectedId)
                 .findAny().orElse(null);
 
-        if (result == null) { throw new NullPointerException(); }
+        if (result == null) {
+            throw new NullPointerException();
+        }
 
         return result;
     }

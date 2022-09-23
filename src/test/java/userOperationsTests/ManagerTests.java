@@ -5,7 +5,7 @@ import inventoryData.order.OrderPool;
 import inventoryData.product.Product;
 import inventoryData.product.ProductPool;
 import org.junit.jupiter.api.Test;
-import utils.Observer;
+import fileOperations.Observer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -24,7 +24,7 @@ public class ManagerTests {
 
         pool.registerObserver(observer);
 
-        ProductPool.addItemsToProduct(product, quantity);
+        ProductPool.addItems(product, quantity);
 
         assertEquals(101, product.getQuantity());
     }

@@ -3,13 +3,13 @@ package users;
 
 import inventoryData.order.OrderPool;
 import inventoryData.transaction.TransactionPool;
-import menus.userMenu.UserMenu;
 import inventoryDataDisplay.InventoryDataMenu;
 import inventoryDataDisplay.dataProcessing.DisplayInventoryDataItem;
+import menus.userMenu.UserMenu;
 
 import java.util.List;
 
-public class Admin extends User{
+public class Admin extends User {
 
     public Admin() {
         super.actions = List.of(
@@ -38,5 +38,4 @@ public class Admin extends User{
     private void viewOrders() {
         new InventoryDataMenu(OrderPool.getAllOrders(), new DisplayInventoryDataItem());
     }
-
 }

@@ -1,9 +1,9 @@
 package inventoryData.transaction;
 
+import fileOperations.Observer;
 import fileOperations.TransactionPoolFileHandler;
 import inventoryData.InventoryDataItem;
-import utils.Observer;
-import utils.Subject;
+import inventoryData.Subject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class TransactionPool implements Subject {
-    private static List<Transaction> allTransactions = new ArrayList<>();
     static int idCount;
+    private static List<Transaction> allTransactions = new ArrayList<>();
     private static Observer observer;
 
     public TransactionPool(List<InventoryDataItem> transactions) {
@@ -25,14 +25,12 @@ public class TransactionPool implements Subject {
         }
     }
 
-    public static boolean notInTransactionPool(String receiptNumber) {
+    public static boolean notRegistered(String receiptNumber) {
         Transaction result = allTransactions.stream()
                 .filter(item -> Objects.equals(item.getReceiptNumber(), receiptNumber))
                 .findAny().orElse(null);
 
-        boolean receiptNumberNotRegistered = (result == null);
-
-        return receiptNumberNotRegistered;
+        return (result == null);
     }
 
     public static void addNewTransaction(Transaction transaction) {
@@ -69,6 +67,7 @@ public class TransactionPool implements Subject {
             TransactionPoolFileHandler fileHandler =
                     new TransactionPoolFileHandler("assets/transactionPool.txt");
             items = fileHandler.readFile();
+
             allTransactions.clear();
 
             for (InventoryDataItem item : items) {

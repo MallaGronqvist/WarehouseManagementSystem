@@ -1,9 +1,8 @@
 package fileOperations;
 
 import inventoryData.InventoryDataItem;
+import inventoryData.Subject;
 import inventoryData.order.Order;
-import utils.Observer;
-import utils.Subject;
 
 import java.io.IOException;
 import java.util.List;
@@ -26,7 +25,9 @@ public class OrderPoolFileHandler extends FileHandler implements Observer {
             final String DELIMIT = ";";
             String[] orderData = line.split(DELIMIT);
 
-            if (orderData.length == 0){ throw new NullPointerException(); }
+            if (orderData.length == 0) {
+                throw new NullPointerException();
+            }
 
             boolean confirmed = Boolean.parseBoolean(orderData[0]);
             int orderId = Integer.parseInt(orderData[1]);
@@ -34,7 +35,7 @@ public class OrderPoolFileHandler extends FileHandler implements Observer {
             int quantity = Integer.parseInt(orderData[3]);
 
             return (new Order(confirmed, orderId, productId, quantity));
-        } catch (NumberFormatException | NullPointerException| IndexOutOfBoundsException exception) {
+        } catch (NumberFormatException | NullPointerException | IndexOutOfBoundsException exception) {
             System.out.println("Warning: Some order data may be corrupt or missing.");
         }
         // Extra return statement to keep the compiler happy.

@@ -1,10 +1,9 @@
 package fileOperations;
 
 import inventoryData.InventoryDataItem;
+import inventoryData.Subject;
 import inventoryData.transaction.Transaction;
 import inventoryData.transaction.TransactionType;
-import utils.Observer;
-import utils.Subject;
 
 import java.io.IOException;
 import java.util.List;
@@ -26,7 +25,9 @@ public class TransactionPoolFileHandler extends FileHandler implements Observer 
             final String DELIMIT = ";";
             String[] transactionData = line.split(DELIMIT);
 
-            if (transactionData.length == 0) { throw new NullPointerException();}
+            if (transactionData.length == 0) {
+                throw new NullPointerException();
+            }
 
             TransactionType type = TransactionType.valueOf(transactionData[0]);
             int transactionId = Integer.parseInt(transactionData[1]);
@@ -35,7 +36,7 @@ public class TransactionPoolFileHandler extends FileHandler implements Observer 
             String receiptNumber = transactionData[4];
             return (new Transaction(type, transactionId, productId, quantity, receiptNumber));
         } catch (NumberFormatException | IndexOutOfBoundsException exception) {
-            System.out.println("Warning: Some transaction data may be corrupt.");
+            System.out.println("Warning: Some transaction data may be corrupt or missing.");
         }
         // Extra return statement to keep the compiler happy.
         return null;

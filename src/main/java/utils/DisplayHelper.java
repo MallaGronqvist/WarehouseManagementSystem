@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DisplayHelper {
-
     private static User signedInUser;
 
     public static void setSignedInUser(User signedInUser) {
@@ -50,28 +49,28 @@ public class DisplayHelper {
         }
     }
 
-    public static void requestInput(String request){
+    public static void requestInput(String request) {
         System.out.println();
         System.out.println(request);
         System.out.print("Or enter 'X' to go back: ");
     }
 
-    public static void navigateToUserMenu(String input){
-        if(input.equalsIgnoreCase("X")){
+    public static void navigateToUserMenu(String input) {
+        if (input.equalsIgnoreCase("X")) {
             new UserMenu(signedInUser);
         }
     }
 
-    public static void displayHeader(String header){
+    public static void displayHeader(String header) {
         System.out.println("********** " + header + " **********");
         System.out.println();
     }
 
-    public static void displayText(String text){
+    public static void displayText(String text) {
         System.out.println(text);
     }
 
-    public static void waitForEnter(){
+    public static void waitForEnter() {
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println();

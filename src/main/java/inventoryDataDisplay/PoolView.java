@@ -1,10 +1,10 @@
 package inventoryDataDisplay;
 
-import menus.mainMenu.MainMenu;
-import inventoryData.order.Order;
 import inventoryData.InventoryDataItem;
+import inventoryData.order.Order;
 import inventoryData.product.Product;
 import inventoryData.transaction.Transaction;
+import menus.mainMenu.MainMenu;
 import utils.DisplayHelper;
 import utils.Table;
 
@@ -13,14 +13,15 @@ import java.util.stream.Collectors;
 
 public class PoolView {
     InventoryDataItem sampleItem;
+
     public PoolView(List<? extends InventoryDataItem> data) {
         DisplayHelper.clearConsole();
 
         try {
-        // Get a sample item or alternatively fail if data is empty.
-        sampleItem = data.get(0);
+            // Get a sample item or alternatively fail if data is empty.
+            sampleItem = data.get(0);
 
-        displayTable(data);
+            displayTable(data);
 
         } catch (IndexOutOfBoundsException | NullPointerException exception) {
             DisplayHelper.displayText("No items were found.");
@@ -35,27 +36,26 @@ public class PoolView {
     }
 
     void requestInput() {
-        if (sampleItem instanceof Product){
+        if (sampleItem instanceof Product) {
             DisplayHelper.requestInput("Enter selected product id.");
-        } else if (sampleItem instanceof Transaction){
+        } else if (sampleItem instanceof Transaction) {
             DisplayHelper.requestInput("Enter selected transaction id.");
-        } else if( sampleItem instanceof Order){
+        } else if (sampleItem instanceof Order) {
             DisplayHelper.requestInput("Enter selected order id.");
         }
     }
 
     private void generateTable(List<? extends InventoryDataItem> data) {
-            Table table = new Table(sampleItem.getHeaders(), generateBody(data), sampleItem.getColumnWidths());
+        Table table = new Table(sampleItem.getHeaders(), generateBody(data), sampleItem.getColumnWidths());
 
-            table.displayData();
+        table.displayData();
     }
 
     private List<List<String>> generateBody(List<? extends InventoryDataItem> data) {
-        List<List<String>> body = data.stream()
+
+        return data.stream()
                 .map(InventoryDataItem::getDisplayValues)
                 .collect(Collectors.toList());
-
-        return body;
     }
 
     public void printInvalidOption() {

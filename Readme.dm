@@ -1,4 +1,4 @@
-### Inventory System
+# Inventory System
 
 ## About the project
 
@@ -34,7 +34,7 @@ Lastly, the use case diagrams provided in the Diagrams -directory help to furthe
 the functionality of the app. And the UML class diagrams give an overview of the most
 relevant classes.
 
-# Recommended reading order for documents:
+## Recommended reading order for documents:
 1. Project Requirements
 2. Design Document
 3. Use case diagrams

@@ -9,9 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Had to change some tests because they no longer worked with the file setup.">
-      <change afterPath="$PROJECT_DIR$/Readme.dm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Added a readme.">
+      <change afterPath="$PROJECT_DIR$/Project Management/Diagrams/Use case diagrams/Use case diagram_ Inventory system.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project Management/Diagrams/Use case diagrams/Warehouse Management Systems.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Management/Diagrams/Class Diagram 1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project Management/Diagrams/Class diagrams/Class Diagram 1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Management/Diagrams/Class Diagram 2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project Management/Diagrams/Class diagrams/Class Diagram 2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Management/Diagrams/Class Diagram 3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project Management/Diagrams/Class diagrams/Class Diagram 3.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/mnc/IdeaProjects/WarehouseManagementSystem/Project Management/Project Documentation",
+    "last_opened_file_path": "/Users/mnc/IdeaProjects/WarehouseManagementSystem/Project Management/Diagrams",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -58,11 +61,13 @@
       <recent name="poolDisplayer.processingBehavior" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Project Management/Diagrams" />
       <recent name="$PROJECT_DIR$/Project Management/Project Documentation" />
       <recent name="$PROJECT_DIR$/Project Management" />
-      <recent name="$PROJECT_DIR$/Project Management/Diagrams" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Project Management/Diagrams/Use case diagrams" />
+      <recent name="$PROJECT_DIR$/Project Management/Diagrams/Class diagrams" />
       <recent name="$PROJECT_DIR$/Project Management/Project Documentation" />
     </key>
   </component>
@@ -286,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663941600858</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added a readme.">
+      <created>1663942802448</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1663942802448</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,7 +323,8 @@
     <MESSAGE value="More refactoring..." />
     <MESSAGE value="Added some documentation." />
     <MESSAGE value="Had to change some tests because they no longer worked with the file setup." />
-    <option name="LAST_COMMIT_MESSAGE" value="Had to change some tests because they no longer worked with the file setup." />
+    <MESSAGE value="Added a readme." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a readme." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

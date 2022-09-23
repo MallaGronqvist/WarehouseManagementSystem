@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Added some documentation.">
+    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Had to change some tests because they no longer worked with the file setup.">
+      <change afterPath="$PROJECT_DIR$/Readme.dm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/userOperationsTests/AdminTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userOperationsTests/AdminTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/userOperationsTests/CashierTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userOperationsTests/CashierTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/userOperationsTests/ManagerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userOperationsTests/ManagerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663940462297</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Had to change some tests because they no longer worked with the file setup.">
+      <created>1663941600858</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1663941600858</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -305,7 +310,8 @@
     <MESSAGE value="Did some refactoring." />
     <MESSAGE value="More refactoring..." />
     <MESSAGE value="Added some documentation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some documentation." />
+    <MESSAGE value="Had to change some tests because they no longer worked with the file setup." />
+    <option name="LAST_COMMIT_MESSAGE" value="Had to change some tests because they no longer worked with the file setup." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

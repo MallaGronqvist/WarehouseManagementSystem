@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class AdminTests {
 
     @Test
-    public void testPerformActionWithInvalidInput(){
+    public void testPerformActionWithInvalidInput() {
         Admin admin = new Admin();
         int selectedOption = 7;
 
@@ -16,7 +16,7 @@ public class AdminTests {
     }
 
     @Test
-    public void testPerformActionWithInvalidNegativeInput(){
+    public void testPerformActionWithInvalidNegativeInput() {
         Admin admin = new Admin();
         int selectedOption = -1;
         assertThrows(IndexOutOfBoundsException.class, () -> admin.performAction(7));

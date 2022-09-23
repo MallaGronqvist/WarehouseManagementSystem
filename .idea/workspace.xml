@@ -9,11 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="More refactoring...">
-      <change afterPath="$PROJECT_DIR$/Project Management/Diagrams/Class Diagram 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project Management/Diagrams/Class Diagram 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project Management/Diagrams/Class Diagram 3.png" afterDir="false" />
+    <list default="true" id="e8105709-9735-4b93-8ab5-39695e42542c" name="Changes" comment="Added some documentation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/userOperationsTests/AdminTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userOperationsTests/AdminTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/userOperationsTests/CashierTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userOperationsTests/CashierTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/userOperationsTests/ManagerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userOperationsTests/ManagerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/mnc/IdeaProjects/WarehouseManagementSystem/Project Management/Diagrams",
+    "last_opened_file_path": "/Users/mnc/IdeaProjects/WarehouseManagementSystem/Project Management/Project Documentation",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -59,8 +59,16 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="poolDisplayer.processingBehavior" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Project Management/Project Documentation" />
+      <recent name="$PROJECT_DIR$/Project Management" />
+      <recent name="$PROJECT_DIR$/Project Management/Diagrams" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Project Management/Project Documentation" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ManagerTests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="InventorySystem" />
@@ -70,6 +78,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventorySystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="userOperationsTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="userOperationsTests" />
+      <option name="MAIN_CLASS_NAME" value="userOperationsTests.AdminTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,7 +112,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CashierTests.getTransactionByReceiptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ManagerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventorySystem" />
       <extension name="coverage">
         <pattern>
@@ -98,14 +121,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="userOperationsTests" />
-      <option name="MAIN_CLASS_NAME" value="userOperationsTests.CashierTests" />
-      <option name="METHOD_NAME" value="getTransactionByReceiptTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="userOperationsTests.ManagerTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CashierTests.removeLastItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ManagerTests.removeRejectedOrderFromOrderListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventorySystem" />
       <extension name="coverage">
         <pattern>
@@ -114,24 +136,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="userOperationsTests" />
-      <option name="MAIN_CLASS_NAME" value="userOperationsTests.CashierTests" />
-      <option name="METHOD_NAME" value="removeLastItemTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CashierTests.returnItemUpdatedQuantityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventorySystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="userOperationsTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="userOperationsTests" />
-      <option name="MAIN_CLASS_NAME" value="userOperationsTests.CashierTests" />
-      <option name="METHOD_NAME" value="returnItemUpdatedQuantityTest" />
+      <option name="MAIN_CLASS_NAME" value="userOperationsTests.ManagerTests" />
+      <option name="METHOD_NAME" value="removeRejectedOrderFromOrderListTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ManagerTests" />
+        <item itemvalue="JUnit.ManagerTests.removeRejectedOrderFromOrderListTest" />
         <item itemvalue="JUnit.CashierTests" />
-        <item itemvalue="JUnit.CashierTests.getTransactionByReceiptTest" />
-        <item itemvalue="JUnit.CashierTests.returnItemUpdatedQuantityTest" />
-        <item itemvalue="JUnit.CashierTests.removeLastItemTest" />
+        <item itemvalue="JUnit.AdminTests" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663939405282</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added some documentation.">
+      <created>1663940462297</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1663940462297</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -291,7 +304,8 @@
     <MESSAGE value="Did some minor changes and refactoring." />
     <MESSAGE value="Did some refactoring." />
     <MESSAGE value="More refactoring..." />
-    <option name="LAST_COMMIT_MESSAGE" value="More refactoring..." />
+    <MESSAGE value="Added some documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some documentation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

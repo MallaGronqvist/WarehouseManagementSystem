@@ -1,5 +1,6 @@
 package userOperationsTests;
 
+import fileOperations.Observer;
 import inventoryData.InventoryDataItem;
 import inventoryData.order.Order;
 import inventoryData.order.OrderPool;
@@ -10,7 +11,6 @@ import inventoryData.transaction.TransactionPool;
 import inventoryData.transaction.TransactionType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import fileOperations.Observer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,16 +28,17 @@ public class CashierTests {
     Observer observer;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         products = new ArrayList<>();
         transactions = new ArrayList<>();
         orders = new ArrayList<>();
 
-        observer = data -> {};
+        observer = data -> {
+        };
     }
 
     @Test
-    public void removeItemTest(){
+    public void removeItemTest() {
         products.add(new Product(13, "IPhone 13", 10, "A11"));
         productPool = new ProductPool(products);
         productPool.registerObserver(observer);
@@ -49,7 +50,7 @@ public class CashierTests {
     }
 
     @Test
-    public void removeLastItemTest(){
+    public void removeLastItemTest() {
         products.add(new Product(12, "IPhone Original", 1, "A11"));
         productPool = new ProductPool(products);
         productPool.registerObserver(observer);
@@ -59,7 +60,7 @@ public class CashierTests {
     }
 
     @Test
-    public void getTransactionByReceiptTest(){
+    public void getTransactionByReceiptTest() {
         products.add(new Product(46, "Samsung Galaxy", 13, "A11"));
         productPool = new ProductPool(products);
         productPool.registerObserver(observer);
@@ -80,7 +81,7 @@ public class CashierTests {
     }
 
     @Test
-    public void getTransactionByInvalidReceiptTest(){
+    public void getTransactionByInvalidReceiptTest() {
         products.add(new Product(46, "Samsung Galaxy", 13, "A11"));
         productPool = new ProductPool(products);
         productPool.registerObserver(observer);
@@ -97,7 +98,7 @@ public class CashierTests {
     }
 
     @Test
-    public void returnItemUpdatedQuantityTest(){
+    public void returnItemUpdatedQuantityTest() {
         products.add(new Product(1, "Another test product", 1, "A1"));
         productPool = new ProductPool(products);
         productPool.registerObserver(observer);
@@ -116,7 +117,7 @@ public class CashierTests {
     }
 
     @Test
-    public void placeOrderCheckIfProductAlreadyOrderedTest(){
+    public void placeOrderCheckIfProductAlreadyOrderedTest() {
         int quantity = 100;
         Product product = new Product(2, "Another test product", 1, "A1");
         Order order = new Order(product, quantity);

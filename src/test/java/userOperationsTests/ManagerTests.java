@@ -1,26 +1,27 @@
 package userOperationsTests;
 
+import fileOperations.Observer;
 import inventoryData.order.Order;
 import inventoryData.order.OrderPool;
 import inventoryData.product.Product;
 import inventoryData.product.ProductPool;
 import org.junit.jupiter.api.Test;
-import fileOperations.Observer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ManagerTests {
 
     @Test
-    public void addArrivedItemsToProductPoolTest(){
+    public void addArrivedItemsToProductPoolTest() {
         Product product = new Product(1, "Test Product", 1, "A1");
         Order order = new Order(product, 100);
         int quantity = order.getQuantity();
 
         ProductPool pool = new ProductPool();
 
-        // Can't run the test if pool's observer is null.
-        Observer observer = data -> {};
+        Observer observer = data -> {
+        };
 
         pool.registerObserver(observer);
 
@@ -30,20 +31,19 @@ public class ManagerTests {
     }
 
     @Test
-    public void removeRejectedOrderFromOrderListTest(){
+    public void confirmOrderListTest() {
         OrderPool pool = new OrderPool();
         Product product = new Product(1, "Test Product", 1, "A1");
         Order order = new Order(product, 100);
 
-        Observer observer = data -> {};
+        Observer observer = data -> {
+        };
         pool.registerObserver(observer);
-        
+
         OrderPool.addNewOrder(order);
 
-        assertEquals(1, OrderPool.getAllOrders().size());
+        OrderPool.confirmOrder(order);
 
-        OrderPool.removeOrder(order);
-
-        assertEquals(0, OrderPool.getAllOrders().size());
+        assertTrue(order.isConfirmed());
     }
 }
